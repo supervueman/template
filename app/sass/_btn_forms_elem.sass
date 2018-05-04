@@ -1,0 +1,48 @@
+.btn-a
+	@include btn ($a, $d, $a, $a, transparent, $d, 0, 30px, 15px 45px, 1)
+	font-weight: 300
+.btn-d
+	@include btn ($d, $l, $d, $d, $l, $l, 0, 20px, 8px 35px, 1)
+	font-weight: 300
+.btn-a-small
+	@include btn ($a, $d, $a, $a, transparent, $d, 0, 20px, 8px 25px, 1)
+	width: 100%
+	font-weight: 300
+.input-big
+	@include btn ($input-d, $d, $input-d, $l, $input-d, $d, 0, 30px, 15px 25px, 1)
+	font-weight: 300
+.input-small
+	@include btn ($input-d, $d, $input-d, $l, $input-d, $d, 0, 20px, 8px 15px, 1)
+	font-weight: 300
+	width: 100%
+	margin: 15px 0
+label
+	color: $a
+textarea, select
+	@include btn ($input-d, $d, $input-d, $l, $input-d, $d, 0, 20px, 8px 15px, 1)
+	text-align: left
+.tab
+	@include btn ($d, $d, $l, $l, $d, $l, 0, 20px, 8px 0, 1)
+.link
+	@include link ($a, 1px, 0)
+	text-transform: uppercase
+.select
+	position: relative
+	&::after
+		content: ''
+		position: absolute
+		width: 10px
+		height: 10px
+		border:
+			top: 1px solid $l
+			left: 1px solid $l
+		top: 13px
+		right: 20px
+		z-index: 10
+		transform: rotate(45deg + 180deg)
+		cursor: pointer
+		pointer-events: none
+	select
+		width: 100%
+	option
+		background-color: $d

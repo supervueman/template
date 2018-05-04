@@ -1,0 +1,18 @@
+@mixin btn ($border-color, $color, $bg-color, $hover-color, $bg-hover-color, $bg-active-color, $border-radius, $fz, $pad, $lh)
+  border: 1px solid $border-color
+  border-radius: $border-radius
+  color: $color
+  background-color: $bg-color
+  cursor: pointer
+  font-size: $fz
+  white-space: nowrap
+  transition: 0.5s
+  padding: $pad
+  line-height: $lh
+  text-align: center
+  display: inline-block
+  &:hover, &:active, &:focus
+    color: $hover-color
+    background-color: $bg-hover-color
+  &:active, &:focus
+    background-color: lighten(rgba($d, 0.6), 10%)

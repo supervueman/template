@@ -1,0 +1,73 @@
+.active
+  z-index: 100
+  transform: translateX(0)
+  opacity: 1
+.active-prev
+  transform: translateX(-100%)
+.active-next
+  transform: translateX(100%)
+
+.top-mnu
+  .active-link
+    .link
+      &::before, &::after
+        width: 50%
+
+.mob-mnu
+  .active-link
+    .link
+      &::before, &::after
+        width: 50%
+
+.mob-mnu-active
+  .page
+    transform: translateX(255px)
+  .blocker
+    z-index: 9998
+    opacity: 1
+
+.tab-active
+  background-color: $d
+  color: $l
+.visible-tab-view
+  z-index: 10
+  opacity: 1
+  transform: translateY(0)
+
+.hamburger-active
+	&::after
+		transform: rotate(45deg)
+		top: 5px
+	&::before
+		transform: rotate(-45deg)
+		top: 5px
+	.inner-hamb
+		opacity: 0
+		transform: translateX(100px)
+.appender-popup-wrap
+  .blocker-popup
+    z-index: 9991
+    opacity: 1
+
+.popup-open-popup
+  .popup-opened-open-popup
+    opacity: 1
+    transform: translate(0)
+.popup-open-consult, .popup-open-order-form
+  .service-popup, .card
+    .popup
+      opacity: 1
+      transform: translateY(0)
+  .close-consult
+    display: block
+  .blocker-consult, .card-blocker
+    z-index: 9998
+    opacity: 1
+
+.active-slide
+	.item
+		opacity: 1
+
+.notification-visible
+  transform: translate(0)
+  opacity: 1
