@@ -1,3 +1,32 @@
+(function(){
+  function LinkActivator (options) {
+    var _ = this;
+    _.link = $(options.link);
+    _.scrollContainer = $(options.scrollContainer);
+    _.sections = $(options.sect);
+    _.findlink = function () {
+      $(_.scrollContainer).scroll(function () {
+        for (var i = 0; i < _.sections.length; i++) {
+          if (_.scrollContainer[0].scrollTop >= _.sections[i].offsetTop - 50 && _.scrollContainer[0].scrollTop <= _.sections[i].offsetTop + 50) {
+            _.link.removeClass('active-link');
+            $(options.link + '[href="#' + $(_.sections[i]).attr('id') + '"]').addClass('active-link');
+          }
+        }
+      })
+    }
+    _.init = function () {
+      _.findlink();
+    }
+  }
+  window.linkActivator = LinkActivator;
+})();
+
+var linkActivator = new linkActivator({
+  scrollContainer: '#scroll-container',
+  link: '.link',
+  sect: '.sect'
+})
+linkActivator.init()
 //Mobile menu
 var mob_menu = new mmenu({
   menu: '.mob-mnu',
