@@ -18,24 +18,23 @@
 	@include btn ($d, $l, $d, $d, $l, $l, $btn-radius, 26px, 15px 45px, 1)
 	font-weight: 300
 .btn-l
-	@include btn (#ebebeb, $d, $l, $a, $l, $l, $btn-radius, 26px, 15px 45px, 1)
+	@include btn ($light-grey, $d, $l, $a, $l, $l, $btn-radius, 26px, 15px 45px, 1)
 	font-weight: 300
 .btn-la
-	@include btn (#ebebeb, $a, $l, $a, $l, $l, $btn-radius, 26px, 15px 45px, 1)
+	@include btn ($light-grey, $a, $l, $a, $l, $l, $btn-radius, 26px, 15px 45px, 1)
 	font-weight: 300
 	box-shadow: $shadow
 .btn-la-small
-	@include btn (#ebebeb, $a, $l, $a, $l, $l, $btn-radius, 20px, 10px 35px, 1)
+	@include btn ($light-grey, $a, $l, $a, $l, $l, $btn-radius, 20px, 10px 35px, 1)
 	font-weight: 300
 	box-shadow: $shadow
-.input
-	@include btn ($input-d, $d, $input-d, $l, $input-d, $d, 0, 30px, 15px 25px, 1)
+input
+	@include btn ($light-grey, $d, $l, $d, $l, $l, $btn-radius, 26px, 15px 25px, 1)
 	font-weight: 300
 label
 	color: $a
 textarea, select
-	@include btn ($input-d, $d, $input-d, $l, $input-d, $d, 0, 20px, 8px 15px, 1)
-	text-align: left
+	@include btn ($light-grey, $d, $l, $d, $l, $l, $btn-radius, 26px, 15px 25px, 1)
 .tab
 	@include btn ($d, $d, $l, $l, $d, $l, 0, 20px, 8px 0, 1)
 .link
@@ -49,10 +48,12 @@ textarea, select
 		width: 10px
 		height: 10px
 		border:
-			top: 1px solid $l
-			left: 1px solid $l
-		top: 13px
-		right: 20px
+			top: $bord-d
+			left: $bord-d
+		top: 0
+		bottom: 0
+		margin: auto
+		right: 30px
 		z-index: 10
 		transform: rotate(45deg + 180deg)
 		cursor: pointer
