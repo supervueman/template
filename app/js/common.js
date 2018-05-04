@@ -6,19 +6,6 @@ var mob_menu = new mmenu({
   page: '.page'
 });
 mob_menu.init();
-//Fullpage
-var space_page = new spage({
-  screen_scroll: '.screen-scroll',
-  sect: '.sect',
-  link: '.screen-link',
-  interval: 1300,
-  oversize: false,
-  afterChange: function(){},
-  beforeChange: function(){
-  	mob_menu.close();
-  }
-});
-space_page.init();
 
 var hidden_input = $('.hidden-input');
 var text;
