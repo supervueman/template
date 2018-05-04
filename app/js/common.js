@@ -8,8 +8,9 @@
       $(_.scrollContainer).scroll(function () {
         for (var i = 0; i < _.sections.length; i++) {
           if (_.scrollContainer[0].scrollTop >= _.sections[i].offsetTop - 50 && _.scrollContainer[0].scrollTop <= _.sections[i].offsetTop + 50) {
+            var id = $(_.sections[i]).attr('id');
             _.link.removeClass('active-link');
-            $(options.link + '[href="#' + $(_.sections[i]).attr('id') + '"]').addClass('active-link');
+            $(options.link + '[href="#' + id + '"]').addClass('active-link');
           }
         }
       })
