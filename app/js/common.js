@@ -27,7 +27,23 @@ var linkActivator = new linkActivator({
   link: '.link',
   sect: '.sect'
 })
-linkActivator.init()
+linkActivator.init();
+
+// Progress
+var toolbar = $('.toolbar');
+$('.screen-scroll').scroll(function(){
+ var scrollTop = $(this)[0].scrollTop,
+     scrollHeight = $(this)[0].scrollHeight,
+     height = $(window).height(),
+     progress = 100 * scrollTop / (scrollHeight - height);
+ $('.progress').css('width', progress + '%');
+ if(scrollTop > 100){
+  toolbar.addClass('white-theme');
+ }else{
+  toolbar.removeClass('white-theme');
+ }
+});
+
 //Mobile menu
 var mob_menu = new mmenu({
   menu: '.mob-mnu',

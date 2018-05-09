@@ -1,31 +1,30 @@
 @import "vars"
 .hidden
 	display: none
-.visible-sm
+.visible-lg
+	display: block
+.visible-md, .visible-sm, .visible-xs
 	display: none
 .cont-fluid
 	display: flex
-	flex-direction: column
-	justify-content: center
-	align-items: flex-start
 	width: 1920px
 	margin: 0 auto
 	padding: 0 20px
 	z-index: 10
 	position: relative
-.row
-	display: flex
 	flex-flow: row wrap
-	align-items: flex-start
-	width: 100%
-	flex: 1
 
-@media only screen and (max-width: 1000px)
-	.visible-sm
-		display: block
-	.hidden-sm
-		display: none
+@media only screen and (max-width: 1200px)
+	//
 
-@media only screen and (max-width : 580px)
-	.hidden-xsm
-		display: none
+@media only screen and (max-width: 992px)
+	//
+
+@media only screen and (max-width : 768px)
+	//
+
+@media only screen and (max-width: 480px)
+	//
+
+@media only screen and (max-width: 320px)
+	//
