@@ -1,5 +1,5 @@
 <?php
-$admin_email = "daily@buseedo.com, chaogen2@gmail.com";
+$admin_email = "daily@buseedo.com, chaogen2@gmail.com, partners@multikey.studio";
 function adopt($text) {
 	return '=?UTF-8?B?'.Base64_encode($text).'?=';
 }
