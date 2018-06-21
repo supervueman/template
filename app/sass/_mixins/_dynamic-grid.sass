@@ -2,10 +2,20 @@
 
 @for $i from 1 through 1
   .cont-fluid
-    width: nth($xl-cont-size, $i)
+    width: nth($lg-cont-size, $i)
   .lg-visible, .md-visible, .sm-visible, .xsm-visible, .xs-visible
     display: none
+  .lg-flex-visible, .md-flex-visible, .sm-flex-visible, .xsm-flex-visible, .xs-flex-visible
+    display: none
   @for $j from 1 through $grid-column
+    .#{nth($prefix, $i)}-col-offset-right-#{$j}
+      margin-right: (100 / $grid-column * $j) + %
+      margin-left: 0
+      width: 100 - (100 / $grid-column * $j) + %
+    .#{nth($prefix, $i)}-col-offset-#{$j}
+      margin-left: (100 / $grid-column * $j) + %
+      margin-right: 0
+      width: 100 - (100 / $grid-column * $j) + %
     .#{nth($prefix, $i)}-col-#{$j}
       width: (100 / $grid-column * $j) + %
 @for $i from 1 through length($prefix)
@@ -20,5 +30,13 @@
       .#{nth($prefix, $i)}-hidden
         display: none
       @for $j from 1 through $grid-column
+        .#{nth($prefix, $i)}-col-offset-#{$j}
+          margin-left: (100 / $grid-column * $j) + %
+          margin-right: 0
+          width: 100 - (100 / $grid-column * $j) + %
+        .#{nth($prefix, $i)}-col-offset-right-#{$j}
+          margin-right: (100 / $grid-column * $j) + %
+          margin-left: 0
+          width: 100 - (100 / $grid-column * $j) + %
         .#{nth($prefix, $i)}-col-#{$j}
           width: (100 / $grid-column * $j) + %

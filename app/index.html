@@ -68,11 +68,11 @@
 				<div class="cont-fluid column">
 					<h3 class="h3">Buttons style</h3>
 					<div class="content">
-						<a href="#open-popup" class="btn-l">Open popup</a>
-						<a href="#open-popup" class="btn-d">Open popup</a>
-						<a href="#open-popup" class="btn-a">Open popup</a>
-						<a href="#open-popup" class="btn-la">Open popup</a>
-						<a href="#open-popup" class="btn-la-small">Open popup</a>
+						<a href="#callback" class="btn-l appender open-popup">Open popup</a>
+						<a href="#callback" class="btn-d appender open-popup">Open popup</a>
+						<a href="#callback" class="btn-a appender open-popup">Open popup</a>
+						<a href="#callback" class="btn-la appender open-popup">Open popup</a>
+						<a href="#callback" class="btn-la-small appender open-popup">Open popup</a>
 					</div>
 				</div>
 			</section>
@@ -88,7 +88,7 @@
 				<div class="cont-fluid column">
 					<h3 class="h3">Form style, politics popup</h3>
 					<form>
-						<input type="text" class="call-phone" placeholder="Your phone:"/>
+						<input type="text" class="mask-phone" placeholder="Your phone:"/>
 						<div class="select">
 							<select name="" id="">
 								<option selected>Item 1</option>
@@ -97,7 +97,7 @@
 							</select>
 						</div>
 						<button class="btn-a">Send</button>
-						<div class="polit">Нажимая на «Подтвердить» вы даете согласие на <br><a class="open-politics appender" href="#politics">обработку персональных данных</a></div>
+						<div class="polit">Нажимая на «Подтвердить» вы даете согласие на <br><a class="open-popup appender" href="#politics">обработку персональных данных</a></div>
 					</form>
 				</div>
 			</section>
@@ -114,81 +114,78 @@
 					<div class="slider">
 						<div class="control prev triangle-left"></div>
 						<div class="viewport">
-							<div class="slider-preload">
-								<div class="preload-inner"></div>
-							</div>
 							<div class="slide-line">
-								<div class="item item-1" data-filter="id-1">
+								<div class="slide-item item-1" data-filter="id-1">
 									<div class="inner">
 										item-1
 									</div>
 								</div>
-								<div class="item item-2" data-filter="id-1">
+								<div class="slide-item item-2" data-filter="id-1">
 									<div class="inner">
 										item-1
 									</div>
 								</div>
-								<div class="item item-3" data-filter="id-2">
+								<div class="slide-item item-3" data-filter="id-2">
 									<div class="inner">
 										item-2
 									</div>
 								</div>
-								<div class="item item-4" data-filter="id-4">
+								<div class="slide-item item-4" data-filter="id-4">
 									<div class="inner">
 										item-4
 									</div>
 								</div>
-								<div class="item item-5" data-filter="id-1">
+								<div class="slide-item item-5" data-filter="id-1">
 									<div class="inner">
 										item-1
 									</div>
 								</div>
-								<div class="item item-6" data-filter="id-2">
+								<div class="slide-item item-6" data-filter="id-2">
 									<div class="inner">
 										item-2
 									</div>
 								</div>
-								<div class="item item-7" data-filter="id-1">
+								<div class="slide-item item-7" data-filter="id-1">
 									<div class="inner">
 										item-1
 									</div>
 								</div>
-								<div class="item item-8" data-filter="id-4">
+								<div class="slide-item item-8" data-filter="id-4">
 									<div class="inner">
 										item-4
 									</div>
 								</div>
-								<div class="item item-9" data-filter="id-4">
+								<div class="slide-item item-9" data-filter="id-4">
 									<div class="inner">
 										item-4
 									</div>
 								</div>
-								<div class="item item-10" data-filter="id-3">
+								<div class="slide-item item-10" data-filter="id-3">
 									<div class="inner">
 										item-3
 									</div>
 								</div>
-								<div class="item item-11" data-filter="id-3">
+								<div class="slide-item item-11" data-filter="id-3">
 									<div class="inner">
 										item-3
 									</div>
 								</div>
-								<div class="item item-12" data-filter="id-1">
+								<div class="slide-item item-12" data-filter="id-1">
 									<div class="inner">
 										item-1
 									</div>
 								</div>
-								<div class="item item-13" data-filter="id-3">
+								<div class="slide-item item-13" data-filter="id-3">
 									<div class="inner">
 										item-3
 									</div>
 								</div>
-								<div class="item item-14" data-filter="id-4">
+								<div class="slide-item item-14" data-filter="id-4">
 									<div class="inner">
 										item-4
 									</div>
 								</div>
-								<div class="item item-15" data-filter="id-1">
+								<div class="slide-item item-15" data-filter="id-1">
 									<div class="inner">
 										item-1
 									</div>
@@ -232,7 +229,7 @@
 			<section class="sect" id="sect-6">
 				<div class="cont-fluid column">
 					<h3 class="h3">Form send</h3>
-					<a href="#callback" class="btn-la-small callback appender open-popup">Sign up</a>
+					<a href="#callback" class="btn-la-small appender open-popup">Sign up</a>
 				</div>
 			</section>
 		</div>
@@ -248,8 +245,8 @@
 				<button class="btn-a">Send</button>
 			</form>
 		</div>
-		<div id="politics">
-			<div class="close-politics"></div>
+		<div id="politics" class="popup">
+			<div class="close close-popup"></div>
 			<h2 class="h2">Политика конфиденциальности</h2>
 			<p>Одной из основополагающих ценностей является безопасность и обеспечение конфиденциальности предоставленных Клиентами данных. С целью полного и всестороннего понимания данного документа, просим Вас внимательно с ним ознакомиться.</p>
 			<ul>

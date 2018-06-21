@@ -29,10 +29,11 @@ gulp.task('js', ['common-js'], function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
 		'app/libs/jquery.maskedinput/dist/jquery.maskedinput.min.js',
-		'app/libs/fullpage/fullpage.js',
-		'app/libs/mobile-menu/mobile-menu.js',
-		'app/libs/popup/popup.js',
-		'app/libs/slider/slider.js'
+		'app/libs/fullpage/index.js',
+		'app/libs/mobile-menu/index.js',
+		'app/libs/popup/index.js',
+		'app/libs/slider/index.js',
+		'app/libs/link-activator/index.js'
 		//'app/js/common.min.js', // Всегда в конце
 		])
 	.pipe(concat('scripts.min.js'))
@@ -46,11 +47,7 @@ gulp.task('browser-sync', function() {
 		server: {
 			baseDir: 'app'
 		},
-		notify: false,
-		// port: process.env.PORT,
-		// host: process.env.IP
-		// tunnel: true,
-		// tunnel: "projectmane", //Demonstration page: http://projectmane.localtunnel.me
+		notify: false
 	});
 });
 
