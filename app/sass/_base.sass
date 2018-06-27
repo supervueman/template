@@ -26,13 +26,6 @@
 	position: relative
 	overflow-y: scroll
 	scroll-behavior: smooth
-.container
-	display: flex
-	flex-direction: column
-	justify-content: center
-	align-items: center
-	width: 100%
-	height: 100%
 .scrollable
 	overflow-y: auto
 	overflow-x: hidden
@@ -49,25 +42,11 @@
 	text-align: center
 	font-size: 8px
 	line-height: 1.2
-	color: $l
+	color: $d
 	.open-popup
 		border-bottom: $bord-l
-		color: $l
-////SLIDER////
-.slider
-	position: relative
-	cursor: pointer
-	z-index: 999
-.viewport
-	width: 100%
-	overflow: hidden
-	position: relative
-	transition: 0.5s
-.slide-line
-	transition: 0.5s
-	overflow-y: hidden
-.slide
-	float: left
+		color: $d
+
 ///////////////
 .text-d
 	color: $d
@@ -95,32 +74,3 @@
 
 span
 	color: $a
-
-.item-flex
-	display: flex
-.item-block
-	padding: 0 50px 0 0
-.icon
-	height: 85px
-	margin-bottom: 40px
-	img
-		max-height: 100%
-
-.tabbar
-	position: fixed
-	top: 60px
-	left: 0
-	width: 100%
-	padding: 0 0 0 255px
-	display: flex
-	z-index: 200
-	flex-flow: row wrap
-.tab-view
-	position: absolute
-	top: 98px
-	z-index: -100
-	opacity: 0
-	transform: translateY(100%)
-	transition: 0.5s
-	width: 100%
-	height: calc(100% - 98px)
