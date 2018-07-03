@@ -5,6 +5,15 @@ var linkActivator = new linkActivator({
 })
 linkActivator.init();
 
+var animator = new Animator({
+  scrollContainer: '#scroll-container',
+  elems: '.anim-elem',
+  animator: 'animator',
+  offsetPercent: 80
+})
+animator.init();
+
+
 // Progress
 var toolbar = $('.toolbar');
 $('.screen-scroll').scroll(function(){
