@@ -33,7 +33,8 @@ gulp.task('js', ['common-js'], function() {
 		'app/libs/mobile-menu/index.js',
 		'app/libs/popup/index.js',
 		'app/libs/slider/index.js',
-		'app/libs/link-activator/index.js'
+		'app/libs/link-activator/index.js',
+		'app/libs/animator/index.js'
 		//'app/js/common.min.js', // Всегда в конце
 		])
 	.pipe(concat('scripts.min.js'))
@@ -126,5 +127,5 @@ gulp.task('rsync', function() {
 gulp.task('removedist', function() { return del.sync('dist'); });
 gulp.task('clearcache', function () { return cache.clearAll(); });
 
-gulp.task('location', function() { return setTimeout(function() { gutil.log('Your code is running at http://fullpage-template-webpackmen.c9users.io:8080/.') }, 2000); });
+gulp.task('location', function() { return setTimeout(function() { gutil.log('Your code is running at http://localhost:3000/.') }, 2000); });
 gulp.task('default', ['watch', 'location']);
