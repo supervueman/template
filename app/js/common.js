@@ -1,3 +1,4 @@
+// LinkActivator
 var linkActivator = new linkActivator({
   scrollContainer: '#scroll-container',
   link: '.link',
@@ -5,6 +6,7 @@ var linkActivator = new linkActivator({
 })
 linkActivator.init();
 
+// Animator
 var animator = new Animator({
   scrollContainer: '#scroll-container',
   elems: '.anim-elem',
@@ -13,20 +15,19 @@ var animator = new Animator({
 })
 animator.init();
 
-
 // Progress
 var toolbar = $('.toolbar');
 $('.screen-scroll').scroll(function(){
- var scrollTop = $(this)[0].scrollTop,
-     scrollHeight = $(this)[0].scrollHeight,
-     height = $(window).height(),
-     progress = 100 * scrollTop / (scrollHeight - height);
- $('.progress').css('width', progress + '%');
- if(scrollTop > 100){
-  toolbar.addClass('white-theme');
- }else{
-  toolbar.removeClass('white-theme');
- }
+  var scrollTop = $(this)[0].scrollTop,
+      scrollHeight = $(this)[0].scrollHeight,
+      height = $(window).height(),
+      progress = 100 * scrollTop / (scrollHeight - height);
+  $('.progress').css('width', progress + '%');
+  if(scrollTop > 100){
+    toolbar.addClass('white-theme');
+  }else{
+    toolbar.removeClass('white-theme');
+  }
 });
 
 //Mobile menu
