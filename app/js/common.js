@@ -7,11 +7,48 @@ var linkActivator = new linkActivator({
 linkActivator.init();
 
 // Animator
+var arrDataNum = [],
+    bool = false
 var animator = new Animator({
   scrollContainer: '#scroll-container',
   elems: '.anim-elem',
   animator: 'animator',
-  offsetPercent: 80
+  offsetPercent: 80,
+  handler: function(){
+    if (this.thsElem.hasClass('num') && this.thsElem.hasClass('animator') == false) {
+      var el = this.thsElem.find('.number');
+      for (var i = 0; i <= el.length; i++) {
+        if ($(el[i]).data('num') != undefined) {
+          arrDataNum.push($(el[i]).data('num'));
+        }
+      }
+      if (el.length == arrDataNum.length) {
+        el.each(function(i) {
+          var ths = $(this),
+              j = 0;
+          function come(elem) {
+            var docViewTop = $(window).scrollTop(),
+                docViewBottom = docViewTop + $(window).height(),
+                elemTop = elem.offset().top,
+                elemBottom = elemTop + elem.height();
+            if ((elemBottom <= docViewBottom) && (elemTop >= docViewTop)) {
+              var interval = setInterval(function(){
+                j++
+                if (j == arrDataNum[i]) {
+      						clearInterval(interval);
+      					}
+                ths.text(j);
+              }, 5000 / ths.data('num') - j);
+              return true
+            } else {
+              return false
+            }
+          }
+          come(ths);
+        });
+      }
+    }
+  }
 })
 animator.init();
 
