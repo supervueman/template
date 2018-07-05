@@ -121,7 +121,7 @@ mob_menu.init();
 var popup = new spop({
 	popup: '.open-popup',
   close_btn: '.close-popup, .blocker',
-  from: '.hidden',
+  from: '#Hidden__Container',
   to: 'body',
   wrap: 'html',
   when_open: function(){},
