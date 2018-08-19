@@ -112,9 +112,9 @@ $('.screen-scroll').scroll(function() {
 		progress = (100 * scrollTop) / (scrollHeight - height);
 	$('.progress').css('width', progress + '%');
 	if (scrollTop > 100) {
-		toolbar.addClass('white-theme');
+		toolbar.addClass('active-toolbar');
 	} else {
-		toolbar.removeClass('white-theme');
+		toolbar.removeClass('active-toolbar');
 	}
 });
 

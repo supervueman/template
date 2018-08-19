@@ -1,22 +1,28 @@
-.mob-mnu
-	position: fixed
-	width: 80%
-	padding: $space
+.main-sect
 	height: 100%
-	z-index: 0
-	background-color: $l
-	overflow-y: auto
-	overflow-x: hidden
-	.screen-link
-		padding: $space 0
-		transition: 0.5s
-.mob-mnu-active
-	.page
-		transform: translateX(80%)
-	.blocker
-		z-index: 9998
-		opacity: 1
-	
+#call-sect
+	form
+		.btn-d-big
+			margin-top: $space / 2
+		textarea
+			display: block
+
+.box
+	width: 40px
+	height: 40px
+	background-color: red
+	transition: 0.5s
+	border-radius: $radius
+.number
+	width: auto
+	height: auto
+	color: $l
+	padding: $space
+	font-size: 26px
+	font-weight: 600
+.bgGreen
+	background-color: green
+
 @media only screen and (max-width : 1440px)
 	//
 @media only screen and (max-width : 1200px)
@@ -31,3 +37,4 @@
 	//
 @media only screen and (max-width : 320px)
 	//
+

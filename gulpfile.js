@@ -86,7 +86,7 @@ gulp.task('imagemin', function() {
 gulp.task('build', ['removedist', 'imagemin', 'sass', 'js'], function() {
 	var buildFiles = gulp.src(['app/*.html', 'app/*.php', 'app/.htaccess']).pipe(gulp.dest('dist'));
 
-	var buildCss = gulp.src(['app/css/main.min.css']).pipe(gulp.dest('dist/css'));
+	var buildCss = gulp.src(['app/css/index.min.css']).pipe(gulp.dest('dist/css'));
 
 	var buildJs = gulp.src(['app/js/scripts.min.js']).pipe(gulp.dest('dist/js'));
 
