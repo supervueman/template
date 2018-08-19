@@ -38,10 +38,10 @@ gulp.task('js', ['common-js'], function() {
 				'app/libs/slider/index.js',
 				'app/libs/link-activator/index.js',
 				'app/libs/animator/index.js',
-				//'app/js/common.min.js', // Всегда в конце
+				// 'app/js/common.js', // Всегда в конце
 			])
 			.pipe(concat('scripts.min.js'))
-			//.pipe(uglify()) // Минимизировать весь js (на выбор)
+			// .pipe(uglify()) // Минимизировать весь js (на выбор)
 			.pipe(gulp.dest('app/js'))
 			.pipe(browserSync.reload({ stream: true }))
 	);

@@ -8,10 +8,13 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta property="og:image" content="path/to/image.jpg">
-	<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
-	<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+	<link rel="shortcut icon" href="img/favicon/fav-48x48.png" type="image/x-icon">
+	<link rel="icon" type="image/png" href="img/favicon/fav-16x16.png" sizes="16x16">
+	<link rel="icon" type="image/png" href="img/favicon/fav-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="img/favicon/fav-96x96.png" sizes="96x96">
+	<link rel="apple-touch-icon" href="img/favicon/fav-57x57.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/fav-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/fav-114x114.png">
 	<!-- Chrome, Firefox OS and Opera -->
 	<meta name="theme-color" content="#000">
 	<!-- Windows Phone -->
@@ -32,7 +35,9 @@
 
 <body>
 	<div class="mob-mnu">
-		<div class="logo">logo</div>
+		<a href="/" class="logo">
+			<img src="img/item.png" alt="multikey.studio" title="multikey.studio">
+		</a>
 		<menu>
 			<li class="screen-link">
 				<a class="link" href="#sect-1">Section 1</a>
@@ -55,46 +60,59 @@
 		</menu>
 	</div>
 	<div class="page">
-		<div class="hamburger visible-xs">
+		<div class="hamburger sm-visible">
 			<div class="inner-hamb"></div>
 		</div>
 		<div class="preloader"></div>
 		<a href="#sect-1" class="to-top triangle-top"></a>
 		<div class="progress"></div>
 		<div class="notification offline">
-			Connection is failed!!!
+			Соединение с интернетом прервано
 		</div>
 		<div class="notification online">
-			Connection is success!!!
+			Соединение с инетренетом восстановлено
 		</div>
 		<div class="notification message-success">
-			Your email was successfully sent!
+			Ваше сообщение успешно отправлено! Мы перезвоним Вам в ближайшее время.
 		</div>
 		<div class="notification message-error">
-			The message was not sent, there was a failure!
+			Сообщение не отправлено! Проверьте введенные данные и подключение к интернету.
 		</div>
 		<div class="toolbar">
-			<div class="cont-fluid">
-				<menu>
-					<li>
-						<a class="link" href="#sect-1">Section 1</a>
-					</li>
-					<li>
-						<a class="link" href="#sect-2">Section 2</a>
-					</li>
-					<li>
-						<a class="link" href="#sect-3">Section 3</a>
-					</li>
-					<li>
-						<a class="link" href="#sect-4">Section 4</a>
-					</li>
-					<li>
-						<a class="link" href="#sect-5">Section 5</a>
-					</li>
-					<li>
-						<a class="link" href="#sect-6">Section 6</a>
-					</li>
-				</menu>
+			<div class="cont-fluid align-center content-sb">
+				<div class="menu flex align-center">
+					<a href="/" class="logo">
+						<img src="img/item.png" alt="multikey.studio" title="multikey.studio">
+					</a>
+					<menu class="flex align-center">
+						<li>
+							<a class="link" href="#sect-1">Section 1</a>
+						</li>
+						<li>
+							<a class="link" href="#sect-2">Section 2</a>
+						</li>
+						<li>
+							<a class="link" href="#sect-3">Section 3</a>
+						</li>
+						<li>
+							<a class="link" href="#sect-4">Section 4</a>
+						</li>
+						<li>
+							<a class="link" href="#sect-5">Section 5</a>
+						</li>
+						<li>
+							<a class="link" href="#sect-6">Section 6</a>
+						</li>
+					</menu>
+				</div>
+				<div class="navbar flex align-center">
+					<div class="contact flex align-center">
+						<img src="img/phone.svg" alt="Телефон:" title="Телефон:">
+						<a href="tel:+7 (999) 999-99-99" class="link">+7 (999) 999-99-99</a>
+					</div>
+
+					<a href="#callback" class="btn-d open-popup appender">Обратный звонок</a>
+				</div>
 			</div>
 		</div>
 		<div class="blocker"></div>
@@ -378,7 +396,8 @@
 								<li>- использования иных имеющихся на сайте сервисов, включая форум, персональные блоги, сервис обмена личными сообщениями
 									между зарегистрированными участниками, персонализированные комментарии и отзывы, но не ограничиваясь ими.</li>
 								<li>Предоставленные данные могут быть использованы в целях продвижения товаров от имени Компании или от имени партнеров
-									Компании.</li>
+									Компании.
+								</li>
 							</ul>
 						</li>
 						<li>Обеспечение надежности хранения информации и прозрачности целей сбора персональных данных. Персональные данные Клиентов
@@ -421,7 +440,8 @@
 							указанных в разделе 3 персональных данных всеми указанными в настоящей Политике способами, а также передачу указанных
 							данных партнерам Компании для целей исполнения принятых на себя обязательств.</li>
 						<li>Компания не вправе передавать информацию о Клиенте неаффилированным лицам или лицам, не связанным с Компанией договорными
-							отношениями.</li>
+							отношениями.
+						</li>
 						<li>Передача информации аффилированным лицам и лицам, которые связаны с Компанией договорными отношениями (курьерские службы,
 							организации почтовой связи и т.д.), осуществляется для исполнения заказа Клиента, а также для возможности информирования
 							Клиента о проводимых акциях, предоставляемых услугах, проводимых мероприятиях.</li>
@@ -451,7 +471,8 @@
 						<li>Компания несет ответственность перед клиентом в случаях, предусмотренных действующим законодательством.</li>
 						<li>Компания освобождается от ответственности в случаях, когда информация о Клиенте: - стала публичным достоянием до её
 							утраты или разглашения - была получена от третьей стороны до момента её получения Компанией - была разглашена с согласия
-							Клиента.</li>
+							Клиента.
+						</li>
 						<li>Компания вправе вносить изменения в политику конфиденциальности в одностороннем порядке. Изменения вступают в силу
 							с момента их опубликования на сайте Компании.</li>
 					</ul>

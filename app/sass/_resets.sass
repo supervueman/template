@@ -43,7 +43,7 @@ html, body
 *::-webkit-scrollbar-thumb
 	background-color: $a
 body
-	font-size: $body-fz-xl
+	font-size: 24px
 	min-width: 320px
 	position: relative
 	line-height: 1.2
@@ -59,6 +59,10 @@ label
 	cursor: pointer
 input, textarea, a, button, select
 	outline: none
+textarea
+	overflow: hidden
+	overflow-y: auto
+	white-space: pre-wrap
 a
 	text-decoration: none
 	color: $d

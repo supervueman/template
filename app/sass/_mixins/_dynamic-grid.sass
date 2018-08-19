@@ -8,15 +8,15 @@
   .lg-flex-visible, .md-flex-visible, .sm-flex-visible, .xsm-flex-visible, .xs-flex-visible
     display: none
   @for $j from 1 through $grid-column
-    .#{nth($prefix, $i)}-col-offset-right-#{$j}
+    .#{nth($prefix, $i)}-offset-right-#{$j}
       margin-right: (100 / $grid-column * $j) + %
       margin-left: 0
       width: 100 - (100 / $grid-column * $j) + %
-    .#{nth($prefix, $i)}-col-offset-#{$j}
+    .#{nth($prefix, $i)}-offset-#{$j}
       margin-left: (100 / $grid-column * $j) + %
       margin-right: 0
       width: 100 - (100 / $grid-column * $j) + %
-    .#{nth($prefix, $i)}-col-#{$j}
+    .#{nth($prefix, $i)}-#{$j}
       width: (100 / $grid-column * $j) + %
 @for $i from 1 through length($prefix)
   @if nth($brakepoint, $i)
@@ -30,13 +30,13 @@
       .#{nth($prefix, $i)}-hidden
         display: none
       @for $j from 1 through $grid-column
-        .#{nth($prefix, $i)}-col-offset-#{$j}
+        .#{nth($prefix, $i)}-offset-#{$j}
           margin-left: (100 / $grid-column * $j) + %
           margin-right: 0
           width: 100 - (100 / $grid-column * $j) + %
-        .#{nth($prefix, $i)}-col-offset-right-#{$j}
+        .#{nth($prefix, $i)}-offset-right-#{$j}
           margin-right: (100 / $grid-column * $j) + %
           margin-left: 0
           width: 100 - (100 / $grid-column * $j) + %
-        .#{nth($prefix, $i)}-col-#{$j}
+        .#{nth($prefix, $i)}-#{$j}
           width: (100 / $grid-column * $j) + %

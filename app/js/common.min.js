@@ -252,18 +252,3 @@ $(window).on('load', function() {
 	preloader.fadeOut();
 	body.addClass('ready');
 });
-
-class Cart {
-	constructor(strategy) {
-		this.strategy = strategy;
-	}
-	getStrategy() {
-		return this.strategy;
-	}
-}
-
-let cart = new Cart({
-	mystr: 'str',
-});
-let str = cart.getStrategy();
-console.log(str);

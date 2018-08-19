@@ -1,19 +1,20 @@
 .active-link
-  &::before, &::after
-    width: 50%
+	color: $a
+	&::before, &::after
+		width: 50%
 
 .mob-mnu
-  .active-link
-    .link
-      &::before, &::after
-        width: 50%
+	.active-link
+		.link
+			&::before, &::after
+				width: 50%
 
 .mob-mnu-active
-  .page
-    transform: translateX(80%)
-  .blocker
-    z-index: 9998
-    opacity: 1
+	.page
+		transform: translateX(80%)
+	.blocker
+		z-index: 9998
+		opacity: 1
 
 .hamburger-active
 	&::after
@@ -27,5 +28,20 @@
 		transform: translateX(100px)
 
 .notification-visible
-  transform: translate(0)
-  opacity: 1
+	transform: translate(0)
+	opacity: 1
+
+@media only screen and (max-width : 1440px)
+	//
+@media only screen and (max-width : 1200px)
+	//
+@media only screen and (max-width : 992px)
+	//
+@media only screen and (max-width : 768px)
+	//
+@media only screen and (max-width : 560px)
+	//
+@media only screen and (max-width : 480px)
+	//
+@media only screen and (max-width : 320px)
+	//
