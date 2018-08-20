@@ -1,6 +1,6 @@
 .toolbar
 	position: fixed
-	width: 100%
+	width: calc(100% - 4px)
 	z-index: 2000
 	height: 80px
 	padding: $space / 2 0
@@ -28,7 +28,12 @@
 @media only screen and (max-width : 992px)
 	//
 @media only screen and (max-width : 768px)
-	//
+	.toolbar
+		height: 60px
+		.cont-fluid
+			justify-content: flex-start
+		.logo
+			margin-right: $space
 @media only screen and (max-width : 560px)
 	//
 @media only screen and (max-width : 480px)
