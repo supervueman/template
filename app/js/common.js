@@ -49,6 +49,12 @@ var selector = new Selector({
 });
 selector.init();
 
+//Mobile menu
+$('#mob-mnu').mmenu({
+	btn: '#hamburger',
+	close_elements: '.blocker',
+});
+
 // LinkActivator
 var linkActivator = new linkActivator({
 	scrollContainer: '#scroll-container',
@@ -117,15 +123,6 @@ $('.screen-scroll').scroll(function() {
 		toolbar.removeClass('active-toolbar');
 	}
 });
-
-//Mobile menu
-var mob_menu = new mmenu({
-	menu: '.mob-mnu',
-	blocker: '.blocker',
-	hamburger: '.hamburger',
-	page: '.page',
-});
-mob_menu.init();
 
 //Popup
 var popup = new spop({

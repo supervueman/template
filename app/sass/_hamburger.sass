@@ -24,11 +24,11 @@
 		top: $height / 2
 		background-color: $a
 		transition: 0.5s
-.hamburger
+#hamburger
 	@include hamburger(25px, 15px, $a, 2px)
 	z-index: 2001
 
-.hamburger-active
+#hamburger.hamburger-active
 	&::after
 		transform: rotate(45deg)
 		top: 5px
