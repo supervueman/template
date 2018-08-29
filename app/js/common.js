@@ -243,9 +243,19 @@ $('.sect').mousemove(function(e) {
 	$('.bg-overlay-d').css('background-position', x + ' ' + y);
 });
 
-$(window).on('load', function() {
-	var preloader = $('.preloader'),
-		body = $('body');
+var preload = $('.inner-preload');
+var width = 0;
+var interval = setInterval(function() {
+	width += 0.125;
+	preload.css('width', width + '%');
+}, 1);
+
+setTimeout(function() {
+	var preloader = $('.preloader');
 	preloader.fadeOut();
+	clearInterval(interval);
+}, 4000);
+$(window).on('load', function() {
+	var body = $('body');
 	body.addClass('ready');
 });
