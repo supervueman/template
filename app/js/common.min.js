@@ -243,18 +243,21 @@ $('.sect').mousemove(function(e) {
 	$('.bg-overlay-d').css('background-position', x + ' ' + y);
 });
 
-var preload = $('.inner-preload');
-var width = 0;
-var interval = setInterval(function() {
-	width += 0.125;
-	preload.css('width', width + '%');
-}, 1);
+var preload = $('.inner-preload'),
+	width = 0,
+	timeout = 2000,
+	inter = 50,
+	interval = setInterval(function() {
+		width += (inter / timeout) * 100; // / 1000;
+		preload.css('width', width + '%');
+	}, inter);
 
 setTimeout(function() {
 	var preloader = $('.preloader');
 	preloader.fadeOut();
 	clearInterval(interval);
-}, 4000);
+	preload.css('width', '100%');
+}, timeout);
 $(window).on('load', function() {
 	var body = $('body');
 	body.addClass('ready');
