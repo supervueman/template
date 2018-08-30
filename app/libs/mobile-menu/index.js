@@ -41,7 +41,7 @@
 		} else if (typeof method === 'object' || !method) {
 			return methods.init.apply(this, arguments);
 		} else {
-			$.error('Метод с именем ' + method + ' не существует для jQuery.tooltip');
+			$.error('Метод с именем ' + method + ' не существует для jQuery.mmenu');
 		}
 	};
 })(jQuery);

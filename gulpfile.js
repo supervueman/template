@@ -34,7 +34,7 @@ gulp.task('js', ['common-js'], function() {
 				'app/libs/jquery.maskedinput/dist/jquery.maskedinput.min.js',
 				'app/libs/fullpage/index.js',
 				'app/libs/mobile-menu/index.js',
-				'app/libs/popup/index.js',
+				'app/libs/modal/modal.js',
 				'app/libs/slider/index.js',
 				'app/libs/link-activator/index.js',
 				'app/libs/animator/index.js',
