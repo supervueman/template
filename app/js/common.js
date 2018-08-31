@@ -125,16 +125,21 @@ $('.screen-scroll').scroll(function() {
 });
 
 //Popup
-var popup = new spop({
-	popup: '.open-popup',
-	close_btn: '.close-popup, .blocker',
+// var popup = new spop({
+// 	popup: '.open-popup',
+// 	close_btn: '.close-popup, .blocker',
+// 	from: '#Hidden__Container',
+// 	to: 'body',
+// 	wrap: 'html',
+// 	when_open: function() {},
+// 	when_close: function() {},
+// });
+// popup.init();
+$('.open-popup').modal({
+	btn_close: '.close-popup',
 	from: '#Hidden__Container',
 	to: 'body',
-	wrap: 'html',
-	when_open: function() {},
-	when_close: function() {},
 });
-popup.init();
 
 //Slider
 var space_slide = new sslider({
