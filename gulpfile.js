@@ -14,19 +14,7 @@ var gulp = require('gulp'),
 	notify = require('gulp-notify'),
 	rsync = require('gulp-rsync');
 
-// Пользовательские скрипты проекта
-
-gulp.task('common-js', function() {
-	return (
-		gulp
-			.src(['app/js/common.js'])
-			.pipe(concat('common.min.js'))
-			//.pipe(uglify())
-			.pipe(gulp.dest('app/js'))
-	);
-});
-
-gulp.task('js', ['common-js'], function() {
+gulp.task('js', function() {
 	return (
 		gulp
 			.src([
@@ -34,7 +22,7 @@ gulp.task('js', ['common-js'], function() {
 				'app/libs/jquery.maskedinput/dist/jquery.maskedinput.min.js',
 				'app/libs/fullpage/index.js',
 				'app/libs/mobile-menu/index.js',
-				'app/libs/modal/index.js',
+				'app/libs/modal/modal.js',
 				'app/libs/slider/index.js',
 				'app/libs/link-activator/index.js',
 				'app/libs/animator/index.js',
@@ -95,9 +83,9 @@ gulp.task('build', ['removedist', 'imagemin', 'sass', 'js'], function() {
 
 gulp.task('deploy', function() {
 	var conn = ftp.create({
-		host: '92.53.96.125',
-		user: 'ct29560',
-		password: 'Deface4ever43',
+		host: 'host',
+		user: 'user',
+		password: 'password',
 		parallel: 10,
 		log: gutil.log,
 	});
@@ -105,7 +93,7 @@ gulp.task('deploy', function() {
 		gulp
 			.src('dist/**/*.*', { buffer: false })
 			//.pipe(conn.newer('/multikey_studio/public_html/'))
-			.pipe(conn.dest('/multikey_studio/public_html/'))
+			.pipe(conn.dest('path'))
 	);
 });
 
