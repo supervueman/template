@@ -135,8 +135,8 @@ $('.screen-scroll').scroll(function() {
 // 	when_close: function() {},
 // });
 // popup.init();
-$('.open-popup').modal({
-	btn_close: '.close-popup',
+$('.open-modal').modal({
+	btn_close: '.close-modal',
 	from: '#Hidden__Container',
 	to: 'body',
 });
