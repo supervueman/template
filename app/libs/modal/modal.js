@@ -145,9 +145,11 @@
 					}
 					function close_modal(elem) {
 						var id = elem.data('modal');
-						console.log(id);
 						function deactivate_modal() {
-							$(settings.to).removeClass('animate-modal animate-' + id);
+							if (modal_count < 1) {
+								$(settings.to).removeClass('animate-modal');
+							}
+							$(settings.to).removeClass('animate-' + id);
 							$('#' + id).removeClass('active-modal');
 						}
 						function deactivate_wrapper() {
@@ -157,24 +159,30 @@
 							$(settings.to).removeClass('append-' + id);
 						}
 						if (_.hasClass('appender')) {
+							count_modals();
 							deactivate_modal();
 							setTimeout(function() {
 								$(settings.from).append($('#' + id));
-								count_modals();
 								deactivate_wrapper();
-							}, 50);
+							}, 500);
 						} else {
+							count_modals();
 							deactivate_wrapper();
 							deactivate_modal();
-							count_modals();
 						}
+					}
+					function z_modal() {
+						$('.modal').click(function() {
+							$('.active-modal').css('z-index', '8000');
+							$(this).css('z-index', '9000');
+						});
 					}
 					function count_modals() {
 						modal_count = $('.active-modal').length;
-						console.log(modal_count);
 					}
 					click_open();
 					click_close();
+					z_modal();
 				});
 			};
 		}

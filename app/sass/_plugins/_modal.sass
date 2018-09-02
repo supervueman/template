@@ -2,8 +2,8 @@
 	position: fixed
 	z-index: 9001
 	transition: 0.5s
-	//opacity: 0
-	//transform: translateY(-50%)
+	opacity: 0
+	transform: translateY(-50%)
 	@include center-mode
 	border-radius: $radius
 .close-modal
@@ -16,8 +16,8 @@
 	&:hover
 		transform: scale(1.2)
 
-.popup-open-popup
-	.popup-opened-open-popup
+.animate-modal
+	.active-modal
 		opacity: 1
 		transform: translate(0)
 	.blocker
