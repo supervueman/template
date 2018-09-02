@@ -128,7 +128,10 @@
 						var id = _.attr('href').substr(1, _.attr('href').length);
 						function activate_modal() {
 							$(settings.to).addClass('animate-modal animate-' + id);
-							$('#' + id).addClass('active-modal');
+							$('.active-modal').css('z-index', '8000');
+							$('#' + id)
+								.addClass('active-modal')
+								.css('z-index', '9000');
 						}
 						if (_.hasClass('appender')) {
 							$(settings.to).addClass('modal-opened append-' + id);
