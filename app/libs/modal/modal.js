@@ -153,7 +153,9 @@
 								$(settings.to).removeClass('animate-modal');
 							}
 							$(settings.to).removeClass('animate-' + id);
-							$('#' + id).removeClass('active-modal');
+							$('#' + id)
+								.removeClass('active-modal')
+								.css('z-index', '');
 						}
 						function deactivate_wrapper() {
 							if (modal_count < 1) {
