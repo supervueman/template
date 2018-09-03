@@ -138,11 +138,13 @@
 							$(settings.to).append($('#' + id));
 							setTimeout(function() {
 								activate_modal();
+								settings.after_open();
 								count_modals();
 							}, 50);
 						} else {
 							$(settings.to).addClass('modal-opened append-' + id);
 							activate_modal();
+							settings.after_open();
 							count_modals();
 						}
 					}
@@ -169,11 +171,13 @@
 							setTimeout(function() {
 								$(settings.from).append($('#' + id));
 								deactivate_wrapper();
+								settings.after_close();
 							}, 500);
 						} else {
 							count_modals();
 							deactivate_wrapper();
 							deactivate_modal();
+							settings.after_close();
 						}
 					}
 					function z_modal() {

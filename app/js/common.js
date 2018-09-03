@@ -139,6 +139,12 @@ $('.open-modal').modal({
 	btn_close: '.close-modal',
 	from: '#Hidden__Container',
 	to: 'body',
+	after_open: function() {
+		console.log('hi');
+	},
+	after_close: function() {
+		console.log('hui');
+	},
 });
 
 //Slider
