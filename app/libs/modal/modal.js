@@ -102,6 +102,8 @@
 			{
 				hamburger: '#hamburger',
 				close_elements: '.blocker',
+				modals: {},
+				index: 0,
 			},
 			options
 		);
@@ -119,32 +121,38 @@
 						});
 					}
 					function click_close() {
-						$(settings.btn_close).click(function(e) {
-							e.preventDefault();
-							close_modal($(this));
-						});
+						if ('#' + $(settings.btn_close).data('modal') == _.attr('href')) {
+							$(settings.btn_close).click(function(e) {
+								e.preventDefault();
+								close_modal($(this));
+							});
+						}
 					}
 					function open_modal() {
 						var id = _.attr('href').substr(1, _.attr('href').length);
 						function activate_modal() {
 							$(settings.to).addClass('animate-modal animate-' + id);
 							$('.active-modal').css('z-index', '8000');
+							settings.index += 1;
 							$('#' + id)
 								.addClass('active-modal')
-								.css('z-index', '9000');
+								.css('z-index', '9000')
+								.attr('data-index', settings.index);
 						}
-						if (_.hasClass('appender')) {
+						if (_.hasClass('appender') && !$('#' + id).hasClass('active-modal')) {
 							$(settings.to).addClass('modal-opened append-' + id);
 							$(settings.to).append($('#' + id));
 							setTimeout(function() {
 								activate_modal();
 								settings.after_open();
+								obj_modals();
 								count_modals();
 							}, 50);
-						} else {
+						} else if (!$('#' + id).hasClass('active-modal')) {
 							$(settings.to).addClass('modal-opened append-' + id);
 							activate_modal();
 							settings.after_open();
+							obj_modals();
 							count_modals();
 						}
 					}
@@ -166,6 +174,7 @@
 							$(settings.to).removeClass('append-' + id);
 						}
 						if (_.hasClass('appender')) {
+							delete settings.modals['#' + id];
 							count_modals();
 							deactivate_modal();
 							setTimeout(function() {
@@ -174,12 +183,22 @@
 								settings.after_close();
 							}, 500);
 						} else {
+							delete settings.modals['#' + id];
 							count_modals();
 							deactivate_wrapper();
 							deactivate_modal();
 							settings.after_close();
 						}
 					}
+					function obj_modals() {
+						var from = settings.from;
+						var modal = _.attr('href');
+						if (from == '') {
+							settings.modals[modal] = 'not_append';
+						}
+						settings.modals[modal] = from;
+					}
+					function close_all() {}
 					function z_modal() {
 						$('.modal').click(function() {
 							$('.active-modal').css('z-index', '8000');
