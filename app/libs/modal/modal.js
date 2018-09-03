@@ -206,7 +206,11 @@
 						});
 					}
 					function count_modals() {
-						modal_count = $('.active-modal').length;
+						var i = 0;
+						for (var key in settings.modals) {
+							i++;
+						}
+						modal_count = i;
 					}
 					click_open();
 					click_close();
