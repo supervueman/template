@@ -125,16 +125,6 @@ $('.screen-scroll').scroll(function() {
 });
 
 //Popup
-// var popup = new spop({
-// 	popup: '.open-popup',
-// 	close_btn: '.close-popup, .blocker',
-// 	from: '#Hidden__Container',
-// 	to: 'body',
-// 	wrap: 'html',
-// 	when_open: function() {},
-// 	when_close: function() {},
-// });
-// popup.init();
 $('.open-modal').modal({
 	btn_close: '.close-modal',
 	from: '#Hidden__Container',
