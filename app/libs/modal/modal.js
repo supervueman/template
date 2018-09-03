@@ -101,7 +101,7 @@
 		var settings = $.extend(
 			{
 				hamburger: '#hamburger',
-				close_elements: '.blocker',
+				blocker: '.blocker',
 				modals: {},
 				index: 0,
 			},
@@ -136,8 +136,7 @@
 							settings.index += 1;
 							$('#' + id)
 								.addClass('active-modal')
-								.css('z-index', '9000')
-								.attr('data-index', settings.index);
+								.css('z-index', '9000');
 						}
 						if (_.hasClass('appender') && !$('#' + id).hasClass('active-modal')) {
 							$(settings.to).addClass('modal-opened append-' + id);
@@ -198,7 +197,14 @@
 						}
 						settings.modals[modal] = from;
 					}
-					function close_all() {}
+					function close_all() {
+						$(settings.blocker).click(function() {
+							for (var key in settings.modals) {
+								var elem = $('[data-modal="' + key.substr(1, key.length) + '"]');
+								close_modal(elem);
+							}
+						});
+					}
 					function z_modal() {
 						$('.modal').click(function() {
 							$('.active-modal').css('z-index', '8000');
@@ -214,6 +220,7 @@
 					}
 					click_open();
 					click_close();
+					close_all();
 					z_modal();
 				});
 			};
