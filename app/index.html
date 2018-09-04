@@ -162,10 +162,10 @@
 					<h1 class="h1 text-center">Buttons</h1>
 				</div>
 				<div class="cont-fluid column align-center">
-					<a href="#callback-2" class="btn-l appender open-modal">Open popup</a>
-					<a href="#callback" class="btn-d appender open-modal">Open popup</a>
-					<a href="#callback" class="btn-a appender open-modal">Open popup</a>
-					<a href="#callback" class="btn-l-big appender open-modal">Open popup</a>
+					<a href="#callback" class="btn-l appender open-modal">Open popup</a>
+					<a href="#callback-2" class="btn-d appender open-modal">Open popup</a>
+					<a href="#callback-3" class="btn-a appender open-modal">Open popup</a>
+					<a href="#callback-4" class="btn-l-big appender open-modal">Open popup</a>
 					<a href="#callback" class="btn-d-big appender open-modal">Open popup</a>
 					<a href="#callback" class="btn-a-big appender open-modal">Open popup</a>
 				</div>
@@ -411,6 +411,24 @@
 		</div>
 	</div>
 	<div id="Hidden__Container">
+		<div class="modal flex column align-center content-center" id="callback">
+			<div class="close-modal appender" data-modal="callback"></div>
+			<form>
+				<label class="h3 text-d text-center" for="call-phone-popup">Оставьте свои данные и мы свяжемся с вами!</label>
+				<div class="form-group">
+					<input type="text" name="name" placeholder="Ваше имя:">
+				</div>
+				<div class="form-group">
+					<input type="text" name="phone" id="call-phone-popup" class="mask-phone" placeholder="Ваш телефон:" required>
+				</div>
+				<input type="hidden" name="title" id="hidinput" value="">
+				<button class="btn-d-big">Отправить</button>
+				<div class="polit">Нажимая на «Подтвердить» вы даете согласие на
+					<br>
+					<a class="open-modal appender" href="#politics">обработку персональных данных</a>
+				</div>
+			</form>
+		</div>
 		<div class="modal flex column align-center content-center" id="callback-2">
 			<div class="close-modal appender" data-modal="callback-2"></div>
 			<form>
@@ -429,8 +447,26 @@
 				</div>
 			</form>
 		</div>
-		<div class="modal flex column align-center content-center" id="callback">
-			<div class="close-modal appender" data-modal="callback"></div>
+		<div class="modal flex column align-center content-center" id="callback-3">
+			<div class="close-modal appender" data-modal="callback-3"></div>
+			<form>
+				<label class="h3 text-d text-center" for="call-phone-popup">Оставьте свои данные и мы свяжемся с вами!</label>
+				<div class="form-group">
+					<input type="text" name="name" placeholder="Ваше имя:">
+				</div>
+				<div class="form-group">
+					<input type="text" name="phone" id="call-phone-popup" class="mask-phone" placeholder="Ваш телефон:" required>
+				</div>
+				<input type="hidden" name="title" id="hidinput" value="">
+				<button class="btn-d-big">Отправить</button>
+				<div class="polit">Нажимая на «Подтвердить» вы даете согласие на
+					<br>
+					<a class="open-modal appender" href="#politics">обработку персональных данных</a>
+				</div>
+			</form>
+		</div>
+		<div class="modal flex column align-center content-center" id="callback-4">
+			<div class="close-modal appender" data-modal="callback-4"></div>
 			<form>
 				<label class="h3 text-d text-center" for="call-phone-popup">Оставьте свои данные и мы свяжемся с вами!</label>
 				<div class="form-group">

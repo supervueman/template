@@ -32,11 +32,13 @@
 						var id = _.attr('href').substr(1, _.attr('href').length);
 						function activate_modal() {
 							$(settings.to).addClass('animate-modal animate-' + id);
-							$('.active-modal').css('z-index', '8000');
-							settings.index += 1;
+							$('.active-modal')
+								.css('z-index', '8000')
+								.attr('data-z', 8000);
 							$('#' + id)
 								.addClass('active-modal')
-								.css('z-index', '9000');
+								.css('z-index', '9000')
+								.attr('data-z', 9000);
 						}
 						if (_.hasClass('appender') && !$('#' + id).hasClass('active-modal')) {
 							$(settings.to).addClass('modal-opened append-' + id);
@@ -64,7 +66,8 @@
 							$(settings.to).removeClass('animate-' + id);
 							$('#' + id)
 								.removeClass('active-modal')
-								.css('z-index', '');
+								.css('z-index', '')
+								.attr('data-z', '');
 						}
 						function deactivate_wrapper() {
 							if (modal_count < 1) {
@@ -105,6 +108,13 @@
 							}
 						});
 					}
+					function close_esc() {
+						$('body').keyup(function(e) {
+							if (e.key == 'Escape') {
+								$(settings.blocker).click();
+							}
+						});
+					}
 					function z_modal() {
 						$('.modal').click(function() {
 							$('.active-modal').css('z-index', '8000');
@@ -121,6 +131,7 @@
 					click_open();
 					click_close();
 					close_all();
+					close_esc();
 					z_modal();
 				});
 			};
