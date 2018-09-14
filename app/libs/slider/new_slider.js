@@ -26,10 +26,22 @@
 					function response() {
 						for (let key in settings.response) {
 							if ($(window).width() >= key) {
-								settings.item = settings.response[key].item;
-								settings.item_sliding = settings.response[key].item_sliding;
-								settings.loop = settings.response[key].loop;
-								settings.dots = settings.response[key].dots;
+								settings.item =
+									settings.response[key].item == undefined
+										? settings.item
+										: settings.response[key].item;
+								settings.item_sliding =
+									settings.response[key].item_sliding == undefined
+										? settings.item_sliding
+										: settings.response[key].item_sliding;
+								settings.loop =
+									settings.response[key].loop == undefined
+										? settings.loop
+										: settings.response[key].loop;
+								settings.dots =
+									settings.response[key].dots == undefined
+										? settings.dots
+										: settings.response[key].dots;
 							}
 						}
 						reset();
@@ -47,7 +59,6 @@
 						slide_line.css('transform', 'translateX(0px)');
 						if (settings.dots) {
 							dotBuild();
-							dotMove();
 						}
 						slideActive();
 					}
@@ -134,6 +145,7 @@
 					}
 					build();
 					navigate();
+					dotMove();
 				});
 			};
 		}

@@ -192,6 +192,7 @@ $('.slider').slider({
 			item: 1,
 			item_sliding: 1,
 			dots: false,
+			loop: true,
 		},
 		'480': {
 			item: 2,
