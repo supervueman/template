@@ -1663,7 +1663,12 @@ img {
             -ms-user-select: none;
                 user-select: none;
         padding: 20px 0;
-        text-align: center; }
+        text-align: center;
+        -webkit-transition: 0.5s;
+        -o-transition: 0.5s;
+        transition: 0.5s; }
+      .slider .viewport .slide-line .slide-active {
+        background-color: #ff0; }
   .slider .nav {
     position: absolute;
     top: 0;

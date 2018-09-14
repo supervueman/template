@@ -1,6 +1,6 @@
 (function($) {
 	$.fn.slider = function(options, method) {
-		var settings = $.extend(
+		let settings = $.extend(
 			{
 				item: 1,
 				item_sliding: 1,
@@ -9,19 +9,19 @@
 			},
 			options
 		);
-		var $this = this;
+		const $this = this;
 		function Methods() {
 			this.init = function() {
 				return $this.each(function() {
-					var _ = $(this);
-					var slide = _.find(settings.slide_class);
-					var slider_width = _.width();
-					var slide_length = slide.length;
-					var nav = _.find(settings.nav);
-					var slide_line = _.find('.slide-line');
-					var translate = 0;
-					var direction = 'next';
-					var index = 0;
+					const _ = $(this);
+					let slide = _.find(settings.slide_class);
+					let slider_width = _.width();
+					let slide_length = slide.length;
+					let nav = _.find(settings.nav);
+					let slide_line = _.find('.slide-line');
+					let translate = 0;
+					let direction = 'next';
+					let index = 0;
 					function build() {
 						slide.width(Math.round(slider_width / settings.item));
 						slide_line.width(slide.width() * slide_length);
@@ -31,9 +31,9 @@
 						}
 					}
 					function dotBuild() {
-						var dots_container = $('<div/>', { class: 'dots' });
-						var html = '';
-						for (var i = 0; i <= Math.round((slide_length - settings.item) / settings.item_sliding); i++) {
+						const dots_container = $('<div/>', { class: 'dots' });
+						let html = '';
+						for (let i = 0; i <= Math.round((slide_length - settings.item) / settings.item_sliding); i++) {
 							html += `<div class="dot" data-dot="${i}"></div>`;
 						}
 						_.append(dots_container.html(html));
@@ -65,12 +65,18 @@
 						slide_line.css('transform', `translateX(${translate}px)`);
 						if (settings.dots) {
 							dotActive();
+							slideActive();
 						}
 					}
 					function dotActive() {
-						console.log(index);
 						_.find('.dot').removeClass('dot-active');
 						_.find(`[data-dot="${index}"]`).addClass('dot-active');
+					}
+					function slideActive() {
+						slide.removeClass('slide-active');
+						let arr = [].push(slide.slice());
+						//_.find(`[data-slide="${index}"]`).addClass('slide-active');
+						console.log(slide);
 					}
 					function loop() {
 						switch (direction) {
@@ -79,7 +85,7 @@
 								translate = 0;
 								break;
 							case 'prev':
-								index = _.find('.dot').length;
+								index = Math.round((slide_length - settings.item) / settings.item_sliding);
 								translate = (slide_line.width() - slide.width() * settings.item) * -1;
 								break;
 						}
@@ -89,7 +95,7 @@
 				});
 			};
 		}
-		var methods = new Methods();
+		const methods = new Methods();
 		if (methods[method]) {
 			return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
 		} else if (typeof method === 'object' || !method) {
