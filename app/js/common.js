@@ -184,7 +184,7 @@ $('.slider').slider({
 	slide_class: '.slide-item',
 	nav: '.nav',
 	item: 2,
-	item_sliding: 1,
+	item_sliding: 2,
 });
 
 var successMsg = $('.message-success'),

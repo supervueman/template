@@ -1649,7 +1649,12 @@ img {
       -webkit-box-direction: normal;
       -webkit-flex-flow: row wrap;
           -ms-flex-flow: row wrap;
-              flex-flow: row wrap; }
+              flex-flow: row wrap;
+      -webkit-transition: -webkit-transform 0.5s;
+      transition: -webkit-transform 0.5s;
+      -o-transition: transform 0.5s;
+      transition: transform 0.5s;
+      transition: transform 0.5s, -webkit-transform 0.5s; }
       .slider .viewport .slide-line .slide-item {
         pointer-events: none;
         -webkit-user-select: none;
