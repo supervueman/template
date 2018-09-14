@@ -1654,13 +1654,16 @@ img {
       transition: -webkit-transform 0.5s;
       -o-transition: transform 0.5s;
       transition: transform 0.5s;
-      transition: transform 0.5s, -webkit-transform 0.5s; }
+      transition: transform 0.5s, -webkit-transform 0.5s;
+      background-color: #ff00ff; }
       .slider .viewport .slide-line .slide-item {
         pointer-events: none;
         -webkit-user-select: none;
            -moz-user-select: none;
             -ms-user-select: none;
-                user-select: none; }
+                user-select: none;
+        padding: 20px 0;
+        text-align: center; }
   .slider .nav {
     position: absolute;
     top: 0;
@@ -1683,8 +1686,8 @@ img {
       position: absolute;
       height: 20px;
       width: 20px;
-      border-bottom: 1px solid #000;
-      border-left: 1px solid #000;
+      border-bottom: 2px solid #000;
+      border-left: 2px solid #000;
       -webkit-transform: rotate(45deg);
           -ms-transform: rotate(45deg);
               transform: rotate(45deg); }
@@ -1698,11 +1701,42 @@ img {
       position: absolute;
       height: 20px;
       width: 20px;
-      border-top: 1px solid #000;
-      border-right: 1px solid #000;
+      border-top: 2px solid #000;
+      border-right: 2px solid #000;
       -webkit-transform: rotate(45deg);
           -ms-transform: rotate(45deg);
               transform: rotate(45deg); }
+  .slider .dots {
+    position: absolute;
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    bottom: -40px; }
+    .slider .dots .dot {
+      width: 10px;
+      height: 10px;
+      -webkit-border-radius: 50px;
+              border-radius: 50px;
+      -webkit-transition: 0.5s;
+      -o-transition: 0.5s;
+      transition: 0.5s;
+      background-color: #000;
+      margin: 0 10px;
+      cursor: pointer; }
+      .slider .dots .dot:hover {
+        -webkit-transform: scale(1.4);
+            -ms-transform: scale(1.4);
+                transform: scale(1.4); }
+    .slider .dots .dot-active {
+      -webkit-transform: scale(1.4);
+          -ms-transform: scale(1.4);
+              transform: scale(1.4); }
 
 .slider-1 {
   width: 100%; }

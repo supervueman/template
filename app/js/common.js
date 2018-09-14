@@ -183,8 +183,10 @@ space_slide.init();
 $('.slider').slider({
 	slide_class: '.slide-item',
 	nav: '.nav',
-	item: 2,
-	item_sliding: 2,
+	item: 3,
+	item_sliding: 1,
+	loop: true,
+	dots: true,
 });
 
 var successMsg = $('.message-success'),
