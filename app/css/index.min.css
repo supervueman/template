@@ -1654,8 +1654,7 @@ img {
       transition: -webkit-transform 0.5s;
       -o-transition: transform 0.5s;
       transition: transform 0.5s;
-      transition: transform 0.5s, -webkit-transform 0.5s;
-      background-color: #ff00ff; }
+      transition: transform 0.5s, -webkit-transform 0.5s; }
       .slider .viewport .slide-line .slide-item {
         pointer-events: none;
         -webkit-user-select: none;
@@ -1666,9 +1665,10 @@ img {
         text-align: center;
         -webkit-transition: 0.5s;
         -o-transition: 0.5s;
-        transition: 0.5s; }
+        transition: 0.5s;
+        opacity: 0; }
       .slider .viewport .slide-line .slide-active {
-        background-color: #ff0; }
+        opacity: 1; }
   .slider .nav {
     position: absolute;
     top: 0;
@@ -1745,9 +1745,13 @@ img {
 
 .slider-1 {
   width: 100%; }
+  .slider-1 .viewport .slide-line .slide-item {
+    background-color: #ff00ff; }
 
 .slider-2 {
   width: 80%; }
+  .slider-2 .viewport .slide-line .slide-item {
+    background-color: #ff0; }
 
 .modal {
   position: fixed;
