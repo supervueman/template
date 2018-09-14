@@ -183,7 +183,7 @@ space_slide.init();
 $('.slider').slider({
 	slide_class: '.slide-item',
 	nav: '.nav',
-	item: 2,
+	item: 4,
 	item_sliding: 1,
 	loop: true,
 	dots: true,

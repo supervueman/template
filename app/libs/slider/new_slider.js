@@ -29,6 +29,7 @@
 						if (settings.dots) {
 							dotBuild();
 						}
+						slideActive();
 					}
 					function dotBuild() {
 						const dots_container = $('<div/>', { class: 'dots' });
@@ -65,8 +66,8 @@
 						slide_line.css('transform', `translateX(${translate}px)`);
 						if (settings.dots) {
 							dotActive();
-							slideActive();
 						}
+						slideActive();
 					}
 					function dotActive() {
 						_.find('.dot').removeClass('dot-active');
@@ -74,9 +75,13 @@
 					}
 					function slideActive() {
 						slide.removeClass('slide-active');
-						let arr = [].push(slide.slice());
-						//_.find(`[data-slide="${index}"]`).addClass('slide-active');
-						console.log(slide);
+						let arr = slide.slice(
+							Math.round((translate / _.width()) * settings.item * -1),
+							Math.round((translate / _.width()) * settings.item * -1 + settings.item)
+						);
+						for (let i = 0; i <= arr.length; i++) {
+							$(arr[i]).addClass('slide-active');
+						}
 					}
 					function loop() {
 						switch (direction) {
