@@ -2336,7 +2336,7 @@ textarea {
 #hamburger {
   cursor: pointer;
   width: 25px;
-  height: 15px;
+  height: 16px;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
@@ -2356,12 +2356,12 @@ textarea {
   #hamburger::before {
     top: 0; }
   #hamburger::after {
-    top: 15px; }
+    top: 16px; }
   #hamburger .inner-hamb {
     position: absolute;
     width: 100%;
     height: 2px;
-    top: 7.5px;
+    top: 8px;
     background-color: #35c445;
     -webkit-transition: 0.5s;
     -o-transition: 0.5s;
