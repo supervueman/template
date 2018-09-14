@@ -23,8 +23,8 @@
 					let direction = 'next';
 					let index = 0;
 					function build() {
-						slide.width(Math.round(slider_width / settings.item));
-						slide_line.width(slide.width() * slide_length);
+						slide.width(Math.floor(slider_width / settings.item));
+						slide_line.width(Math.floor(slide.width() * slide_length));
 						slide_line.css('transform', 'translateX(0px)');
 						if (settings.dots) {
 							dotBuild();
