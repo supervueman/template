@@ -49,7 +49,6 @@
 					}
 					function resize() {
 						$(window).resize(function() {
-							slider_width = _.width();
 							response();
 						});
 					}
@@ -137,6 +136,7 @@
 						translate = 0;
 						direction = 'next';
 						index = 0;
+						slider_width = _.width();
 						_.find('.dots').remove();
 					}
 					if (settings.response) {

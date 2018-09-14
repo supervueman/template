@@ -208,6 +208,7 @@ $('.slider').slider({
 			item: 3,
 			item_sliding: 1,
 			dots: true,
+			loop: true,
 		},
 	},
 });
