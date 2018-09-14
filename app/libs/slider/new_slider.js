@@ -18,6 +18,7 @@
 					var slide_line = _.find('.slide-line');
 					var index = 0;
 					var translate = 0;
+					var direction = 'next';
 					function build() {
 						slide.width(Math.round(slider_width / settings.item));
 						slide_line.width(slide.width() * slide_length);
@@ -27,6 +28,7 @@
 						nav.click(function() {
 							if ($(this).hasClass('prev') && translate !== 0) {
 								index -= 1;
+								direction = 'prev';
 								translate += slide.width() * settings.item_sliding;
 								move();
 							} else if (
@@ -34,6 +36,7 @@
 								translate * -1 !== slide_line.width() - slide.width() * settings.item_sliding
 							) {
 								index += 1;
+								direction = 'next';
 								translate -= slide.width() * settings.item_sliding;
 								move();
 							}
