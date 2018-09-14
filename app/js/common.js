@@ -139,7 +139,7 @@ $('.open-modal').modal({
 
 //Slider
 var space_slide = new sslider({
-	slider: '.slider',
+	slider: '#slider',
 	row: 1,
 	items: 1,
 	items_slide: 1,
@@ -179,6 +179,13 @@ var space_slide = new sslider({
 	loop: false,
 });
 space_slide.init();
+
+$('.slider').slider({
+	slide_class: '.slide-item',
+	nav: '.nav',
+	item: 2,
+	item_sliding: 1,
+});
 
 var successMsg = $('.message-success'),
 	errorMsg = $('.message-error');

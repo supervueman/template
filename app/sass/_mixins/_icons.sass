@@ -107,22 +107,6 @@
 			left: $t solid $color
 		transform: rotate(45deg)
 
-@mixin angle-top ($size, $color, $t)
-	height: $size
-	width: $size
-	cursor: pointer
-	position: relative
-	&::after
-		content: ''
-		position: absolute
-		@include center-mode
-		height: $size
-		width: $size
-		border:
-			top: $t solid $color
-			left: $t solid $color
-		transform: rotate(45deg)
-
 @mixin angle-left ($size, $color, $t)
 	height: $size
 	width: $size
