@@ -6,6 +6,7 @@
 				item_sliding: 1,
 				loop: false,
 				dots: false,
+				response: false,
 			},
 			options
 		);
@@ -22,6 +23,24 @@
 					let translate = 0;
 					let direction = 'next';
 					let index = 0;
+					function response() {
+						for (let key in settings.response) {
+							if ($(window).width() >= key) {
+								settings.item = settings.response[key].item;
+								settings.item_sliding = settings.response[key].item_sliding;
+								settings.loop = settings.response[key].loop;
+								settings.dots = settings.response[key].dots;
+							}
+						}
+						reset();
+						build();
+					}
+					function resize() {
+						$(window).resize(function() {
+							slider_width = _.width();
+							response();
+						});
+					}
 					function build() {
 						slide.width(Math.floor(slider_width / settings.item));
 						slide_line.width(slide.width() * slide_length);
@@ -102,6 +121,16 @@
 								translate = (slide_line.width() - slide.width() * settings.item) * -1;
 								break;
 						}
+					}
+					function reset() {
+						translate = 0;
+						direction = 'next';
+						index = 0;
+						_.find('.dots').remove();
+					}
+					if (settings.response) {
+						response();
+						resize();
 					}
 					build();
 					navigate();

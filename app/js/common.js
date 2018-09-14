@@ -184,9 +184,31 @@ $('.slider').slider({
 	slide_class: '.slide-item',
 	nav: '.nav',
 	item: 2,
-	item_sliding: 1,
+	item_sliding: 2,
 	loop: true,
 	dots: true,
+	response: {
+		'0': {
+			item: 1,
+			item_sliding: 1,
+			dots: false,
+		},
+		'480': {
+			item: 2,
+			item_sliding: 1,
+			dots: false,
+		},
+		'768': {
+			item: 2,
+			item_sliding: 2,
+			loop: false,
+		},
+		'992': {
+			item: 3,
+			item_sliding: 1,
+			dots: true,
+		},
+	},
 });
 
 var successMsg = $('.message-success'),
