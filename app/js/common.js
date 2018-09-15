@@ -187,6 +187,9 @@ $('.slider').slider({
 	item_sliding: 2,
 	loop: true,
 	dots: true,
+	automove: false,
+	interval: 2000,
+	transition: '0.5s',
 	response: {
 		'0': {
 			item: 1,

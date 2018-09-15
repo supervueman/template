@@ -7,6 +7,9 @@
 				loop: false,
 				dots: false,
 				response: false,
+				automove: false,
+				interval: 5000,
+				transition: '0.5s',
 			},
 			options
 		);
@@ -14,12 +17,13 @@
 		function Methods() {
 			this.init = function() {
 				return $this.each(function() {
-					const _ = $(this);
+					let _ = $(this);
 					let slide = _.find(settings.slide_class);
 					let slider_width = _.width();
 					let slide_length = slide.length;
 					let nav = _.find(settings.nav);
 					let slide_line = _.find('.slide-line');
+					let viewport = _.find('.viewport');
 					let translate = 0;
 					let direction = 'next';
 					let index = 0;
@@ -42,10 +46,23 @@
 									settings.response[key].dots == undefined
 										? settings.dots
 										: settings.response[key].dots;
+								settings.automove =
+									settings.response[key].automove == undefined
+										? settings.automove
+										: settings.response[key].automove;
+								settings.interval =
+									settings.response[key].interval == undefined
+										? settings.interval
+										: settings.response[key].interval;
+								settings.transition =
+									settings.response[key].transition == undefined
+										? settings.transition
+										: settings.response[key].transition;
 							}
 						}
 						reset();
 						build();
+						touchMove();
 					}
 					function resize() {
 						$(window).resize(function() {
@@ -55,7 +72,7 @@
 					function build() {
 						slide.width(Math.floor(slider_width / settings.item));
 						slide_line.width(slide.width() * slide_length);
-						slide_line.css('transform', 'translateX(0px)');
+						slide_line.css({ transform: 'translateX(0px)', transition: settings.transition });
 						if (settings.dots) {
 							dotBuild();
 						}
@@ -75,21 +92,58 @@
 					function navigate() {
 						nav.click(function() {
 							direction = $(this).hasClass('prev') ? 'prev' : 'next';
-							if ($(this).hasClass('prev') && translate !== 0) {
+							if (direction == 'prev' && translate !== 0) {
 								index--;
 								translate += slide.width() * settings.item_sliding;
-								move();
 							} else if (
-								$(this).hasClass('next') &&
+								direction == 'next' &&
 								translate * -1 < slide_line.width() - slide.width() * settings.item
 							) {
 								index++;
 								translate -= slide.width() * settings.item_sliding;
-								move();
 							} else if (settings.loop) {
 								loop();
-								move();
 							}
+							move();
+						});
+					}
+					function touchMove() {
+						let bool = false;
+						let startX = 0;
+						let endX = 0;
+						let prev_translate = translate;
+						let prev_index = index;
+						viewport.on('touchstart', function(e) {
+							startX = e.originalEvent.changedTouches[0].screenX;
+							bool = true;
+							slide_line.css({ transition: '0s' });
+							viewport.on('touchmove', function(e) {
+								if (bool) {
+									x = e.originalEvent.changedTouches[0].screenX - startX;
+									let translateX = prev_translate + x;
+									slide_line.css({ transform: `translateX(${translateX}px)` });
+								}
+							});
+						});
+						viewport.on('touchend', function(e) {
+							bool = false;
+							endX = e.originalEvent.changedTouches[0].screenX;
+							slide_line.css({ transition: settings.transition });
+							direction = endX >= startX ? 'prev' : 'next';
+							if (direction == 'prev' && translate !== 0) {
+								index = -Math.round(endX / startX / 2) + prev_index;
+								translate = index * settings.item_sliding * slide.width();
+								console.log(translate);
+							} else if (
+								direction == 'next' &&
+								translate * -1 < slide_line.width() - slide.width() * settings.item
+							) {
+								index = Math.round(startX / endX / 2) + prev_index;
+								translate = index * settings.item_sliding * slide.width() * -1;
+							}
+							prev_translate = translate;
+							prev_index = index;
+							move();
 						});
 					}
 					function move() {
@@ -98,6 +152,19 @@
 							dotActive();
 						}
 						slideActive();
+					}
+					function autoMove() {
+						settings.loop = true;
+						setInterval(function() {
+							if (translate * -1 < slide_line.width() - slide.width() * settings.item) {
+								index++;
+								translate = index * slide.width() * settings.item_sliding * -1;
+								move();
+							} else if (settings.loop) {
+								loop();
+								move();
+							}
+						}, settings.interval);
 					}
 					function dotActive() {
 						_.find('.dot').removeClass('dot-active');
@@ -145,7 +212,11 @@
 					}
 					build();
 					navigate();
+					touchMove();
 					dotMove();
+					if (settings.automove) {
+						autoMove();
+					}
 				});
 			};
 		}
