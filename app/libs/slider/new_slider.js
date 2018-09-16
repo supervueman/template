@@ -29,7 +29,19 @@
 					let direction = 'next';
 					let index = 0;
 					function centerMode() {
-						console.log('centerMode');
+						_.addClass('center-mode');
+						if (settings.item % 2 == 0) {
+							settings.item = settings.item + 1;
+							settings.item_sliding = 1;
+						}
+					}
+					function centerElement() {
+						let slide_active = _.find('.slide-active');
+						let slide_active_length = slide_active.length;
+						let center_element = $(slide_active[Math.floor(slide_active_length / 2)]);
+						slide.removeClass('center-element');
+						center_element.addClass('center-element');
+						console.log(center_element);
 					}
 					function response() {
 						for (let key in settings.response) {
@@ -64,12 +76,13 @@
 										: settings.response[key].transition;
 							}
 						}
-						reset();
-						build();
 					}
 					function resize() {
 						$(window).resize(function() {
+							reset();
 							response();
+							centerMode();
+							build();
 						});
 					}
 					function build() {
@@ -188,6 +201,7 @@
 						for (let i = 0; i <= arr.length; i++) {
 							$(arr[i]).addClass('slide-active');
 						}
+						centerElement();
 					}
 					function loop() {
 						switch (direction) {
@@ -208,12 +222,12 @@
 						slider_width = _.width();
 						_.find('.dots').remove();
 					}
-					if (settings.center_mode) {
-						centerMode();
-					}
 					if (settings.response) {
 						response();
 						resize();
+					}
+					if (settings.center_mode) {
+						centerMode();
 					}
 					build();
 					navigate();

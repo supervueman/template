@@ -1676,7 +1676,8 @@ img {
     margin: auto;
     -webkit-transition: 0.5s;
     -o-transition: 0.5s;
-    transition: 0.5s; }
+    transition: 0.5s;
+    z-index: 100; }
     .slider .nav:hover {
       -webkit-transform: scale(1.2);
           -ms-transform: scale(1.2);
@@ -1742,6 +1743,15 @@ img {
       -webkit-transform: scale(1.4);
           -ms-transform: scale(1.4);
               transform: scale(1.4); }
+
+.center-mode .viewport {
+  overflow: visible; }
+  .center-mode .viewport .slide-line .slide-item {
+    opacity: 1; }
+  .center-mode .viewport .slide-line .center-element {
+    -webkit-transform: scale(1.4);
+        -ms-transform: scale(1.4);
+            transform: scale(1.4); }
 
 .slider-1 {
   width: 100%; }

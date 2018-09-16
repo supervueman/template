@@ -28,6 +28,7 @@
 		bottom: 0
 		margin: auto
 		transition: 0.5s
+		z-index: 100
 		&:hover
 			transform: scale(1.2)
 	.prev
@@ -76,6 +77,14 @@
 				transform: scale(1.4)
 		.dot-active
 			transform: scale(1.4)
+.center-mode
+	.viewport
+		overflow: visible
+		.slide-line
+			.slide-item
+				opacity: 1
+			.center-element
+				transform: scale(1.4)
 
 .slider-1
 	width: 100%
