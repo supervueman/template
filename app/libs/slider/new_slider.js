@@ -112,8 +112,8 @@
 						let startX = 0;
 						let endX = 0;
 						let prev_translate = translate;
-						let prev_index = index;
 						viewport.on('touchstart', function(e) {
+							console.log(viewport);
 							startX = e.originalEvent.changedTouches[0].screenX;
 							bool = true;
 							slide_line.css({ transition: '0s' });
@@ -131,18 +131,18 @@
 							slide_line.css({ transition: settings.transition });
 							direction = endX >= startX ? 'prev' : 'next';
 							if (direction == 'prev' && translate !== 0) {
-								index = -Math.round(endX / startX / 2) + prev_index;
-								translate = index * settings.item_sliding * slide.width();
-								console.log(translate);
+								index--;
+								translate += slide.width() * settings.item_sliding;
 							} else if (
 								direction == 'next' &&
 								translate * -1 < slide_line.width() - slide.width() * settings.item
 							) {
-								index = Math.round(startX / endX / 2) + prev_index;
-								translate = index * settings.item_sliding * slide.width() * -1;
+								index++;
+								translate -= slide.width() * settings.item_sliding;
+							} else if (settings.loop) {
+								loop();
 							}
 							prev_translate = translate;
-							prev_index = index;
 							move();
 						});
 					}
@@ -212,7 +212,6 @@
 					}
 					build();
 					navigate();
-					touchMove();
 					dotMove();
 					if (settings.automove) {
 						autoMove();
