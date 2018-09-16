@@ -10,6 +10,7 @@
 				automove: false,
 				interval: 5000,
 				transition: '0.5s',
+				center_mode: false,
 			},
 			options
 		);
@@ -27,6 +28,9 @@
 					let translate = 0;
 					let direction = 'next';
 					let index = 0;
+					function centerMode() {
+						console.log('centerMode');
+					}
 					function response() {
 						for (let key in settings.response) {
 							if ($(window).width() >= key) {
@@ -62,7 +66,6 @@
 						}
 						reset();
 						build();
-						touchMove();
 					}
 					function resize() {
 						$(window).resize(function() {
@@ -113,7 +116,6 @@
 						let endX = 0;
 						let prev_translate = translate;
 						viewport.on('touchstart', function(e) {
-							console.log(viewport);
 							startX = e.originalEvent.changedTouches[0].screenX;
 							bool = true;
 							slide_line.css({ transition: '0s' });
@@ -206,12 +208,16 @@
 						slider_width = _.width();
 						_.find('.dots').remove();
 					}
+					if (settings.center_mode) {
+						centerMode();
+					}
 					if (settings.response) {
 						response();
 						resize();
 					}
 					build();
 					navigate();
+					touchMove();
 					dotMove();
 					if (settings.automove) {
 						autoMove();

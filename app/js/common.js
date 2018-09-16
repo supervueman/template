@@ -190,6 +190,7 @@ $('.slider').slider({
 	automove: false,
 	interval: 2000,
 	transition: '0.5s',
+	center_mode: true,
 	response: {
 		'0': {
 			item: 1,
