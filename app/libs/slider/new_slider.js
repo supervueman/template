@@ -81,7 +81,9 @@
 						$(window).resize(function() {
 							reset();
 							response();
-							centerMode();
+							if (settings.center_mode) {
+								centerMode();
+							}
 							build();
 						});
 					}
@@ -201,7 +203,9 @@
 						for (let i = 0; i <= arr.length; i++) {
 							$(arr[i]).addClass('slide-active');
 						}
-						centerElement();
+						if (settings.center_mode) {
+							centerElement();
+						}
 					}
 					function loop() {
 						switch (direction) {
