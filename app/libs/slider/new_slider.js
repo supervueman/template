@@ -41,7 +41,6 @@
 						let center_element = $(slide_active[Math.floor(slide_active_length / 2)]);
 						slide.removeClass('center-element');
 						center_element.addClass('center-element');
-						console.log(center_element);
 					}
 					function response() {
 						for (let key in settings.response) {
