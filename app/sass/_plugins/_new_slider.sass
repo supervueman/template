@@ -1,0 +1,100 @@
+.main-sect
+	.cont-fluid
+		height: 80%
+.slider
+	width: 100%
+	position: relative
+	.viewport
+		width: 100%
+		overflow: hidden
+		height: 100%
+		.slide-line
+			height: 100%
+			display: flex
+			flex-flow: row wrap
+			transition: transform 0.5s
+			.slide-item
+				pointer-events: none
+				user-select: none
+				padding: $space 0
+				text-align: center
+				transition: 0.5s
+				opacity: 0
+			.slide-active
+				opacity: 1
+	.nav
+		position: absolute
+		top: 0
+		bottom: 0
+		margin: auto
+		transition: 0.5s
+		z-index: 100
+		&:hover
+			transform: scale(1.2)
+	.prev
+		height: 20px
+		width: 20px
+		cursor: pointer
+		left: -30px
+		&::after
+			content: ''
+			position: absolute
+			height: 20px
+			width: 20px
+			border:
+				bottom: 2px solid $d
+				left: 2px solid $d
+			transform: rotate(45deg)
+	.next
+		height: 20px
+		width: 20px
+		cursor: pointer
+		right: -30px
+		&::after
+			content: ''
+			position: absolute
+			height: 20px
+			width: 20px
+			border:
+				top: 2px solid $d
+				right: 2px solid $d
+			transform: rotate(45deg)
+	.dots
+		position: absolute
+		width: 100%
+		display: flex
+		justify-content: center
+		bottom: -40px
+		.dot
+			width: 10px
+			height: 10px
+			border-radius: 50px
+			transition: 0.5s
+			background-color: $d
+			margin: 0 10px
+			cursor: pointer
+			&:hover
+				transform: scale(1.4)
+		.dot-active
+			transform: scale(1.4)
+.center-mode
+	.viewport
+		overflow: visible
+		.slide-line
+			.slide-item
+				opacity: 1
+			.center-element
+				transform: scale(1.4)
+
+.slider-1
+	width: 100%
+	.viewport
+		.slide-line
+			.slide-item
+				background-color: #ff00ff
+.slider-2
+	width: 80%
+	.viewport
+		.slide-line
+			.slide-item
+				background-color: #ff0
