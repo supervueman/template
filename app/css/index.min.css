@@ -7523,6 +7523,9 @@ readers do not read off random characters that represent icons */
   font-family: 'Font Awesome 5 Brands';
   font-weight: 400; }
 
+.slider-sect {
+  width: 100%; }
+
 #slider {
   position: relative;
   cursor: pointer;
@@ -7630,6 +7633,17 @@ readers do not read off random characters that represent icons */
     #slider .filter-link:hover {
       color: #35c445; }
   #slider .filter-active {
+    color: #35c445; }
+
+.tab-container {
+  margin-bottom: 20px; }
+  .tab-container .tab {
+    font-weight: bold;
+    cursor: pointer;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s; }
+  .tab-container .tab-active {
     color: #35c445; }
 
 .main-sect .cont-fluid {
@@ -8514,7 +8528,7 @@ textarea {
   right: 0;
   max-width: 350px;
   width: 100%;
-  z-index: 9999;
+  z-index: 9000;
   background-color: #fff;
   padding: 20px;
   border: 1px solid #000;
@@ -8574,6 +8588,9 @@ textarea {
   padding: 20px;
   font-size: 26px;
   font-weight: 600; }
+
+.slider-tab-sect {
+  width: 100%; }
 
 #politics {
   top: 0;
