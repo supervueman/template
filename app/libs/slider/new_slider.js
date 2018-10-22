@@ -13,6 +13,7 @@
 				transition: '0.5s', // Свойство для определения transition
 				center_mode: false, // Свойство для включения или выключения режима определения центрального слайда
 				tabs: false, // Свойство для включения или выключения табов
+				fotorama: false, // Свойство активирующее фотораму (работает только я tabs === true)
 			},
 			options // Настройки из вызова плагина
 		);
@@ -87,12 +88,20 @@
 									settings.response[key].transition == undefined
 										? settings.transition
 										: settings.response[key].transition;
+								settings.tabs =
+									settings.response[key].tabs == undefined
+										? settings.tabs
+										: settings.response[key].tabs;
 							}
 						}
 					}
 					function tabsSettings() {
 						settings.item = 1;
 						settings.item_sliding = 1;
+					}
+					function fotoramaSettings() {
+						settings.tabs = true;
+						settings.dots = false;
 					}
 					// Функция вызываемая при ресайзе экрана для обновления состояния сладера
 					// Срабатывает если только настройка response !== false || undefined
@@ -103,6 +112,10 @@
 							// Функция для присвоения настроек в зависимости от ширины экрана
 							if (settings.response) {
 								response();
+							}
+							// Функция установки настроек для фоторамы
+							if (settings.fotorama) {
+								fotoramaSettings();
 							}
 							// Функция установки настроек для табов
 							if (settings.tabs) {
@@ -129,7 +142,7 @@
 							dotBuild();
 						}
 						if (settings.tabs) {
-							tabInit();
+							tabInit(); // Инициализируем табы
 						}
 						// Функция для определения активных (видимых) слайдов отображаемых во viewport
 						slideActive();
@@ -154,8 +167,6 @@
 					}
 					// Функция для индексации табов
 					function tabInit() {
-						const log = console.log;
-						log('Tab');
 						for (let i = 0; i <= slide_length; i++) {
 							// Присваиваем каждому табу атрибут data-tab со значением индекса
 							$(tab[i]).attr('data-tab', i);
@@ -312,7 +323,6 @@
 					}
 					// Функция для определения активного таба
 					function tabActive() {
-						console.log(tab);
 						// Находим все табы в слайдере и предварительно убираем класс tab-active
 						tab.removeClass('tab-active');
 						// Находим таб по индексу и присваиваем ему класс tab-active
@@ -386,6 +396,9 @@
 					if (settings.response) {
 						response(); // Функция для адаптива слайдера
 						resize(); // Функция для обновления состояния слайдера при изменения ширины экрана
+					}
+					if (settings.fotorama) {
+						fotoramaSettings(); // Функция для установки настроек для фоторамы
 					}
 					if (settings.tabs) {
 						tabsSettings(); // Функция для установки настроек для табов

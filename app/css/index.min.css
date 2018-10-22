@@ -568,7 +568,7 @@ address {
   font-style: normal; }
 
 img {
-  image-rendering: crisp-edges; }
+  display: block; }
 
 .hidden {
   display: none; }
@@ -8591,6 +8591,68 @@ textarea {
 
 .slider-tab-sect {
   width: 100%; }
+
+#futurama {
+  padding-top: 120px;
+  height: auto; }
+  #futurama .futurama-tabs {
+    width: 100%; }
+  #futurama .cont-fluid {
+    height: auto; }
+  #futurama .slide-line {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  #futurama .slide-item {
+    padding: 0;
+    opacity: 1; }
+    #futurama .slide-item img {
+      width: 100%; }
+  #futurama .tab {
+    position: relative;
+    width: 80px; }
+    #futurama .tab img {
+      width: 100%;
+      -webkit-transition: 0.5s;
+      -o-transition: 0.5s;
+      transition: 0.5s; }
+    #futurama .tab::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      width: 100%;
+      height: 100%;
+      z-index: 100;
+      opacity: 0;
+      background-color: #35c445;
+      -webkit-transition: 0.5s;
+      -o-transition: 0.5s;
+      transition: 0.5s; }
+    #futurama .tab:hover img {
+      -webkit-transform: scale(1.2);
+          -ms-transform: scale(1.2);
+              transform: scale(1.2); }
+    #futurama .tab:hover::after {
+      opacity: 0.2; }
+  #futurama .tab-active img {
+    -webkit-transform: scale(1.4);
+        -ms-transform: scale(1.4);
+            transform: scale(1.4); }
+  #futurama .tab-active:hover img {
+    -webkit-transform: scale(1.4);
+        -ms-transform: scale(1.4);
+            transform: scale(1.4); }
+  #futurama .tab-active:hover::after {
+    opacity: 0.4; }
+  #futurama .tab-active::after {
+    opacity: 0.4; }
+  #futurama .tab {
+    overflow: hidden; }
 
 #politics {
   top: 0;

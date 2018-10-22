@@ -1,11 +1,3 @@
-// LinkActivator
-var linkActivator = new linkActivator({
-	scrollContainer: '#scroll-container',
-	link: '.link',
-	sect: '.sect',
-});
-linkActivator.init();
-
 $(document).ready(function() {
 	(function() {
 		function Selector(options) {
@@ -57,6 +49,14 @@ $(document).ready(function() {
 		input: '.select',
 	});
 	selector.init();
+
+	// LinkActivator
+	var linkActivator = new LinkActivator({
+		scrollContainer: '#scroll-container',
+		link: '.link',
+		sect: '.sect',
+	});
+	linkActivator.init();
 
 	//Mobile menu
 	$('#mob-mnu').mmenu({
@@ -221,6 +221,7 @@ $(document).ready(function() {
 		},
 	});
 
+	// Slider with tabs
 	$('.slider-tab-sect').slider({
 		slider: '.slider',
 		slide_class: '.slide-item',
@@ -241,6 +242,25 @@ $(document).ready(function() {
 				item_sliding: 1,
 			},
 		},
+	});
+
+	// Slider fotorama
+	$('#futurama').slider({
+		slider: '.slider',
+		slide_class: '.slide-item',
+		nav: '.nav',
+		item: 1,
+		item_sliding: 1,
+		loop: true,
+		dots: true,
+		automove: false,
+		interval: 2000,
+		transition: '0.5s',
+		tabs: true,
+		tab_container: '.tab-container',
+		tab_class: '.tab',
+		futurama: true,
+		response: true,
 	});
 
 	var successMsg = $('.message-success'),
