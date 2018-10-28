@@ -257,8 +257,8 @@ $(document).ready(function() {
 		interval: 2000,
 		transition: '0.5s',
 		tabs: true,
-		tab_container: '.tab-container',
-		tab_class: '.tab',
+		tab_container: '.thumb-container',
+		tab_class: '.thumb',
 		futurama: true,
 		response: true,
 	});

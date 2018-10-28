@@ -30,7 +30,13 @@
 					let viewport = _.find('.viewport');
 					let tab_container = slider_wrap.find(settings.tab_container);
 					let tab = tab_container.find(settings.tab_class);
+					let thumb_line = tab_container.find('.thumb-line');
+					let thumb_width = tab.width();
 					let translate = 0;
+					let thumb_line_translate = 0;
+					let futurama_frame_translate = 0;
+					let futurama_frame_index = 0;
+					let thumb_line_end = true;
 					let direction = 'next';
 					let index = 0;
 					function response() {
@@ -107,7 +113,57 @@
 						if (settings.tabs) {
 							tabInit();
 						}
+						if (settings.futurama) {
+							futuramaBuild();
+						}
 						slideActive();
+					}
+					function futuramaBuild() {
+						let thumb_length = tab.length;
+						const futurama_frame = $('<div/>', { class: 'futurama-frame' });
+						tab_container.append(futurama_frame);
+						futurama_frame.width(thumb_width).css({
+							position: 'absolute',
+							height: `${tab.height()}px`,
+							top: 0,
+							left: 0,
+						});
+						if (thumb_width > 80) {
+							tab.width(80);
+						}
+						thumb_line
+							.width(thumb_width * thumb_length)
+							.css({ transform: `translateX(${-thumb_line_translate * index}px)` });
+					}
+					function thumb_line_move() {
+						let futurama_frame = tab_container.find('.futurama-frame');
+						let visible_thumb_count = Math.floor(slider_width / tab.width());
+						let visible_thumb_width = visible_thumb_count * tab.width();
+						let frame_last_pos = visible_thumb_width - thumb_width;
+						let last_elem_pos = (tab.length - visible_thumb_count) * thumb_width;
+						switch (direction) {
+							case 'next':
+								if (
+									thumb_line_end &&
+									index * thumb_width + thumb_width <= frame_last_pos &&
+									thumb_line_translate !== -last_elem_pos
+								) {
+									futurama_frame_translate = index * thumb_width;
+									futurama_frame_index += 1;
+								} else if (thumb_line_end && thumb_line_translate !== -last_elem_pos) {
+									futurama_frame_index = frame_last_pos / thumb_width - 1;
+									thumb_line_translate = -thumb_width * (index - futurama_frame_index);
+									futurama_frame_translate = frame_last_pos - thumb_width;
+								} else if (thumb_line_end && thumb_line_translate === -last_elem_pos) {
+									futurama_frame_translate += thumb_width;
+								}
+								thumb_line.css({ transform: `translateX(${thumb_line_translate}px)` });
+								futurama_frame.css({ transform: `translateX(${futurama_frame_translate}px)` });
+								break;
+							case 'prev':
+								console.log('prev');
+								break;
+						}
 					}
 					function dotBuild() {
 						const dots_container = $('<div/>', { class: 'dots' });
@@ -196,6 +252,9 @@
 						if (settings.tabs) {
 							tabActive();
 						}
+						if (settings.futurama) {
+							thumb_line_move();
+						}
 						slideActive();
 					}
 					function autoMove() {
@@ -228,8 +287,11 @@
 					}
 					function tabMove() {
 						tab.click(function() {
+							let prev_index = index;
 							index = $(this).data('tab');
+							prev_index > index ? (direction = 'prev') : (direction = 'next');
 							translate = index * slide.width() * settings.item_sliding * -1;
+							console.log(direction);
 							move();
 						});
 					}
@@ -248,6 +310,10 @@
 							case 'next':
 								index = 0;
 								translate = 0;
+								if (settings.futurama) {
+									futurama_frame_translate = 0;
+									thumb_line_translate = 0;
+								}
 								break;
 							case 'prev':
 								index = Math.round((slide_length - settings.item) / settings.item_sliding);

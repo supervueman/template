@@ -1,5 +1,6 @@
 .main-sect
 	height: 100%
+	padding-top: 120px
 #call-sect
 	form
 		.btn-d-big
@@ -29,10 +30,28 @@
 	width: 100%
 
 #futurama
-	padding-top: 120px
-	height: auto
+	.cont-fluid
+		width: 60%
+	.futurama-frame
+		position: absolute
+		top: 0
+		left: 0
+		width: 80px
+		height: 100%
+		z-index: 100
+		opacity: 0.4
+		background-color: $a
+		transition: 0.5s
+		box-sizing: content-box
 	.futurama-tabs
 		width: 100%
+	.thumb-container
+		margin: 0
+		width: 100%
+		overflow: hidden
+		position: relative
+	.thumb-line
+		transition: 0.5s
 	.cont-fluid
 		height: auto
 	.slide-line
@@ -42,9 +61,10 @@
 		opacity: 1
 		img
 			width: 100%
-	.tab
+	.thumb
 		position: relative
 		width: 80px
+		overflow: hidden
 		img
 			width: 100%
 			transition: 0.5s
@@ -77,8 +97,6 @@
 				opacity: 0.4
 		&::after
 			opacity: 0.4
-	.tab
-		overflow: hidden
 
 @media only screen and (max-width : 1440px)
 	//
