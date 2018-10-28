@@ -1,5 +1,6 @@
 .main-sect
 	height: 100%
+	padding-top: 120px
 #call-sect
 	form
 		.btn-d-big
@@ -24,6 +25,78 @@
 	padding: $space
 	font-size: 26px
 	font-weight: 600
+
+.slider-tab-sect
+	width: 100%
+
+#futurama
+	.cont-fluid
+		width: 60%
+	.futurama-frame
+		position: absolute
+		top: 0
+		left: 0
+		width: 80px
+		height: 100%
+		z-index: 100
+		opacity: 0.4
+		background-color: $a
+		transition: 0.5s
+		box-sizing: content-box
+	.futurama-tabs
+		width: 100%
+	.thumb-container
+		margin: 0
+		width: 100%
+		overflow: hidden
+		position: relative
+	.thumb-line
+		transition: 0.5s
+	.cont-fluid
+		height: auto
+	.slide-line
+		align-items: center
+	.slide-item
+		padding: 0
+		opacity: 1
+		img
+			width: 100%
+	.thumb
+		position: relative
+		width: 80px
+		overflow: hidden
+		img
+			width: 100%
+			transition: 0.5s
+		&::after
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			bottom: 0
+			left: 0
+			margin: auto
+			width: 100%
+			height: 100%
+			z-index: 100
+			opacity: 0
+			background-color: $a
+			transition: 0.5s
+		&:hover
+			img
+				transform: scale(1.2)
+			&::after
+				opacity: 0.2
+	.tab-active
+		img
+			transform: scale(1.4)
+		&:hover
+			img
+				transform: scale(1.4)
+			&::after
+				opacity: 0.4
+		&::after
+			opacity: 0.4
 
 @media only screen and (max-width : 1440px)
 	//
