@@ -44,7 +44,7 @@ $(document).ready(function() {
 		}
 		window.Selector = Selector;
 	})();
-
+	// Selector not working
 	var selector = new Selector({
 		input: '.select',
 	});
