@@ -7523,6 +7523,30 @@ readers do not read off random characters that represent icons */
   font-family: 'Font Awesome 5 Brands';
   font-weight: 400; }
 
+.fa-phone {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg); }
+
+.fotorama__thumb-border {
+  border-color: #35c445;
+  background-image: none;
+  background-color: rgba(53, 196, 69, 0.3); }
+
+.fotorama__arr {
+  background-image: none;
+  top: 0;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto; }
+
+.fotorama__wrap--css3.fotorama__wrap--slide.fotorama__wrap--toggle-arrows .fotorama__arr--prev:not(:focus) {
+  -webkit-transform: translate3d(10px, 0, 0);
+          transform: translate3d(10px, 0, 0); }
+
+.fotorama__wrap--css3.fotorama__wrap--slide.fotorama__wrap--toggle-arrows .fotorama__arr--next:not(:focus) {
+  -webkit-transform: translate3d(-10px, 0, 0);
+          transform: translate3d(-10px, 0, 0); }
+
 .slider-sect {
   width: 100%; }
 
@@ -8556,6 +8580,61 @@ textarea {
       -ms-transform: translate(0);
           transform: translate(0);
   opacity: 1; }
+
+#jGrowl {
+  background-color: #fff;
+  -webkit-border-radius: 2px;
+          border-radius: 2px; }
+
+div.jGrowl > .ui-state-highligh {
+  background-color: #fff; }
+
+.jGrowl-close {
+  display: none; }
+
+.jGrowl-notification {
+  background-color: #fff !important;
+  margin: 0;
+  padding: 20px;
+  max-width: 350px;
+  width: 100%;
+  -webkit-border-radius: 1px;
+          border-radius: 1px; }
+
+.jGrowl-header {
+  background-color: #fff; }
+
+.ms2-message-success, .af-message-success {
+  border: 1px solid #35c445 !important; }
+
+.ms2-message-error, .af-message-error {
+  border: 1px solid red !important; }
+
+.ms2-message-info, .af-message-info {
+  border: 1px solid yellow !important; }
+
+.jGrowl-message {
+  font-size: 24px;
+  color: #000; }
+
+.jGrowl-closer {
+  display: none !important; }
+
+@media only screen and (max-width: 1440px) {
+  .jGrowl-message {
+    font-size: 20px; } }
+
+@media only screen and (max-width: 1200px) {
+  .jGrowl-message {
+    font-size: 18px; } }
+
+@media only screen and (max-width: 768px) {
+  .jGrowl-message {
+    font-size: 16px; } }
+
+@media only screen and (max-width: 560px) {
+  .jGrowl-message {
+    font-size: 14px; } }
 
 .main-sect {
   height: 100%;

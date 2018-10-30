@@ -5,3 +5,21 @@
 @import "fontawesome/scss/regular"
 @import "fontawesome/scss/solid"
 @import "fontawesome/scss/v4-shims"
+
+.fa-phone
+	transform: rotateY(180deg)
+.fotorama__thumb-border
+	border-color: $a
+	background-image: none
+	background-color: rgba($a, 0.3)
+.fotorama__arr
+	background-image: none
+	top: 0
+	bottom: 0
+	margin:
+		top: auto
+		bottom: auto
+.fotorama__wrap--css3.fotorama__wrap--slide.fotorama__wrap--toggle-arrows .fotorama__arr--prev:not(:focus)
+	transform: translate3d(10px, 0, 0)
+.fotorama__wrap--css3.fotorama__wrap--slide.fotorama__wrap--toggle-arrows .fotorama__arr--next:not(:focus)
+	transform: translate3d(-10px, 0, 0)
