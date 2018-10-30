@@ -18,9 +18,9 @@ gulp.task('js', function() {
 	return (
 		gulp
 			.src([
-				'app/libs/jquery/dist/jquery.min.js',
-				'app/libs/jquery.maskedinput/dist/jquery.maskedinput.min.js',
-				'app/libs/fullpage/index.js',
+				'app/libs/jquery/index.js',
+				'app/libs/inputmask/index.js',
+				// 'app/libs/fullpage/index.js',
 				'app/libs/mobile-menu/index.js',
 				'app/libs/modal/index.js',
 				'app/libs/slider/index.js',
