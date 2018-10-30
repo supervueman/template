@@ -23,16 +23,51 @@
 	transform: translate(0)
 	opacity: 1
 
+#jGrowl
+	background-color: $l
+	border-radius: $radius
+div.jGrowl > .ui-state-highligh
+	background-color: $l
+.jGrowl-close
+	display: none
+.jGrowl-notification
+	background-color: $l!important
+	margin: 0
+	padding: $space
+	max-width: 350px
+	width: 100%
+	border-radius: $radius / 2
+.jGrowl-header
+	background-color: $l
+.alert
+.ui-state-highlight
+.ui-corner-all
+.ms2-message-success, .af-message-success
+	border: 1px solid $a!important
+.ms2-message-error, .af-message-error
+	border: 1px solid red!important
+.ms2-message-info, .af-message-info
+	border: 1px solid yellow!important
+.jGrowl-message
+	font-size: 24px
+	color: $d
+.jGrowl-closer
+	display: none!important
+
 @media only screen and (max-width : 1440px)
-	//
+	.jGrowl-message
+		font-size: 20px
 @media only screen and (max-width : 1200px)
-	//
+	.jGrowl-message
+		font-size: 18px
 @media only screen and (max-width : 992px)
 	//
 @media only screen and (max-width : 768px)
-	//
+	.jGrowl-message
+		font-size: 16px
 @media only screen and (max-width : 560px)
-	//
+	.jGrowl-message
+		font-size: 14px
 @media only screen and (max-width : 480px)
 	//
 @media only screen and (max-width : 320px)
